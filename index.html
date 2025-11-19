@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PCL - Welcome</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    body {
+      background: #000;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    .home-preview {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      border: none;
+      z-index: 1;
+    }
+    .see-more-btn {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      background: #ff2d2d;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 16px 32px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001; 
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+    }
+    .see-more-btn:hover {
+      background: #d91a1a;
+    }
+    .elevator {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 1000;
+      display: block; 
+    }
+    .elevator .half {
+      position: absolute;
+      width: 50vw;
+      height: 100vh;
+      top: 0;
+      background-image: url('assets/img/1.png');
+      background-size: 100vw 100vh;
+      background-repeat: no-repeat;
+      transition: transform 0.8s cubic-bezier(.77,0,.18,1);
+    }
+    .elevator .left {
+      left: 0;
+      border-right: 2px solid #ff2d2d00;
+      transform: translateX(0);
+      background-position: left top;
+    }
+    .elevator .right {
+      right: 0;
+      border-left: 2px solid #ff2d2d00;
+      transform: translateX(0);
+      background-position: right top;
+    }
+    .elevator.active .left {
+      transform: translateX(-100%);
+    }
+    .elevator.active .right {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+<body>
+  <iframe class="home-preview" src="home.html"></iframe>
+  <button class="see-more-btn" id="seeMoreBtn">SEE MORE</button>
+  <div class="elevator" id="elevatorAnim">
+    <div class="half left"></div>
+    <div class="half right"></div>
+  </div>
+  <script>
+    const btn = document.getElementById('seeMoreBtn');
+    const elevator = document.getElementById('elevatorAnim');
+    btn.addEventListener('click', () => {
+      elevator.classList.add('active');
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 900);
+    });
+  </script>
+</body>
+</html>

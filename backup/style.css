@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+#landing-container {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    z-index: 10;
+    overflow: hidden;
+}
+.landing-img {
+    position: absolute;
+    top: 0;
+    width: 50vw; /* expand each half to overlap more */
+    height: 100vh;
+    background: url('landingpage.png') center center no-repeat;
+    background-size: cover;
+    transition: transform 1s cubic-bezier(.77,0,.18,1);
+}
+.landing-img.left {
+    left: 0;
+    background-position: left center;
+    margin-right: -25px; /* force overlap */
+    z-index: 3;
+}
+.landing-img.right {
+    right: 0;
+    background-position: right center;
+    margin-left: -25px; /* force overlap */
+    z-index: 2;
+}
+#see-more {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    background: #ff2d2d;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: background 0.2s;
+}
+#see-more:hover {
+    background: #d91a1a;
+}
+#main-content {
+    display: none;
+    padding: 60px 30px;
+    text-align: center;
+}
+/* Elevator animation */
+.elevator-left {
+    transform: translateX(-100%);
+}
+.elevator-right {
+    transform: translateX(100%);
+}
+
+@media (max-width: 900px) {
+  .landing-img {
+    width: 60vw;
+  }
+}
+@media (max-width: 600px) {
+  .landing-img {
+    width: 100vw;
+    height: 50vh;
+    top: 0;
+  }
+  #landing-container {
+    flex-direction: column;
+  }
+  #see-more {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 20px;
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+}
