@@ -14,7 +14,7 @@
 
 /* === ASSISTIVE MENU === */
 .assistive-menu { position: fixed; width: 290px; height: 220px; background: rgba(36, 41, 46, 0.90); border-radius: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22); display: flex; align-items: center; justify-content: center; z-index: 999; transition: opacity 0.22s cubic-bezier(.4, 0, .2, 1), transform 0.22s cubic-bezier(.4, 0, .2, 1), background 0.22s cubic-bezier(.4, 0, .2, 1); opacity: 0; transform: scale(0.8); border: 1.5px solid #2226; backdrop-filter: blur(8px); padding: 0; left: 0; top: 0; }
-.assistive-menu.active-transparency { background: rgba(246, 251, 255, 0.75) !important; }
+.assistive-menu.active-transparency { background: rgba(73, 73, 73, 0.75) !important; }
 .assistive-menu.show { display: flex; opacity: 1; transform: scale(1); pointer-events: auto; right: unset !important; bottom: unset !important; }
 .assistive-grid { position: relative; width: 220px; height: 220px; display: block; }
 .assistive-item { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: none; border: none; outline: none; cursor: pointer; border-radius: 18px; transition: background 0.18s, color 0.18s, transform 0.18s; margin: 0; padding: 0; text-align: center; gap: 8px; }
