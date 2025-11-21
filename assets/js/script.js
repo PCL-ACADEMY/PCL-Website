@@ -4,10 +4,24 @@
 document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.getElementById('menuBtn');
   const assistiveMenu = document.getElementById('assistiveMenu');
+  const speechBubble = document.getElementById('speechBubble');
   let menuOpen = false;
+  let bubbleTimeout = null;
 
   // On page load, make sure assistiveMenu is not clickable
   assistiveMenu.style.pointerEvents = 'none';
+
+  // Show speech bubble on load
+  function showSpeechBubble() {
+    if (speechBubble) {
+      speechBubble.classList.remove('hide');
+      // Hide after 2 seconds if not dragged
+      bubbleTimeout = setTimeout(() => {
+        speechBubble.classList.add('hide');
+      }, 2200);
+    }
+  }
+  showSpeechBubble();
 
   menuBtn.addEventListener('click', function(e) {
     if (isDragging || mouseMoved) {
