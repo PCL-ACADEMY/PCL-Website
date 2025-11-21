@@ -1,48 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCL - Transport</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Producers Connection Logistics Inc.</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="main-header">
-    <h1>Transport</h1>
-    <p>Welcome to the Transport page.</p>
-  </header>
-  <section class="fleet-section">
-    <h2>Our Fleet</h2>
-    <p>Modern and well-maintained vehicles for all your transport needs.</p>
-  </section>
-  <section class="safety-section">
-    <h2>Safety First</h2>
-    <p>We prioritize safety for both passengers and cargo.</p>
-  </section>
-  <section class="coverage-section">
-    <h2>Service Coverage</h2>
-    <p>Wide coverage area for local and long-distance transport.</p>
-  </section>
-  <section class="contact-section">
-    <h2>Contact Transport Team</h2>
-    <p>Email: transport@pcl.com | Phone: 123-456-7890</p>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 PCL. All rights reserved.</p>
-  </footer>
-  <button class="menu-btn" id="menuBtn" title="Menu">
-    <img src="assets/img/logo.png" alt="Menu">
-  </button>
-  <div class="assistive-menu" id="assistiveMenu">
-    <div class="assistive-grid">
-      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">PCL Academy</span></div>
-      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+    <!-- Sticky Mother Header -->
+    <div class="mother-header">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +025-3104-921 ‎ ‎ <i class="fas fa-envelope"></i> inquiry@pcl.com.ph</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/pcl.com.ph" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/pcl.com.ph" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/pcl.com.ph" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="assets/js/script.js"></script>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <video class="hero-video" autoplay muted loop>
+            <source src="assets/vid/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>TRANSPORT</h1>
+            <p style="font-size: 1.6rem;">We take pride in delivering logistics services that are built on trust, handled with care, and maintained with the highest standards of cleanliness and professionalism.</p>
+        </div>        
+        <div class="hero-overlay"></div>
+    </section>
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About PCL</h2>
+                    <p style="font-size: 1.3rem;">Being in the industry for more than 2 decades, Producers Connections Logistics Incorporated has been consistent in developing a strong relationship with its customer and business partners.</p>
+                    <p style="font-size: 1.3rem;">PCL has been the preferred choice to several companies operating it the company in terms of product handling, distribution, transportation, warehousing, and other logistics- related services.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>10,000+</h3>
+                            <p>Trips Monthly</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>3+</h3>
+                            <p>Countries Served</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10</h3>
+                            <p>Warehouse Facilities</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Trucks</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/img/map.png" alt="About PCL">
+                </div>
+            </div>
+        </div>
+    </section>    
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>            
+            <div class="services-grid">
+                <a href="PCL/services/warehouse-management.html" class="service-card" style="background-image: url('assets/img/services/warehouse.png');">
+                    <div class="service-content">
+                        <h3>Warehouse Management Services</h3>
+                        <p>Comprehensive warehouse management solutions including inventory control, order fulfillment, and distribution management with real-time tracking systems.</p>
+                    </div>
+                </a>
+                <a href="PCL/services/build-to-suit.html" class="service-card" style="background-image: url('assets/img/services/buildtosuit.png');">
+                    <div class="service-content">
+                        <h3>Build to Suit Warehouse Facilities</h3>
+                        <p>Custom-designed warehouse facilities tailored to your specific business needs with modern infrastructure and strategic locations.</p>
+                    </div>
+                </a>
+                <a href="PCL/services/factory-assistance.html" class="service-card" style="background-image: url('assets/img/services/factory.png');">
+                    <div class="service-content">
+                        <h3>Factory Assistance</h3>
+                        <p>Complete factory support services including production assistance, quality control, and operational optimization to enhance manufacturing efficiency.</p>
+                    </div>
+                </a>
+                <a href="PCL/services/transport-services.html" class="service-card" style="background-image: url('assets/img/services/transport.jpg');">
+                    <div class="service-content">
+                        <h3>Transport Services</h3>
+                        <p>Reliable transportation solutions covering local and long-distance delivery with fleet management and route optimization for maximum efficiency.</p>
+                    </div>
+                </a>
+                <a href="PCL/services/energy-monitoring.html" class="service-card" style="background-image: url('assets/img/services/energy.png');">
+                    <div class="service-content">
+                        <h3>Energy Monitoring</h3>
+                        <p>Advanced energy monitoring and management systems to optimize power consumption, reduce costs, and improve sustainability across all operations.</p>
+                    </div>
+                </a>
+                <a href="PCL/services/value-added-services.html" class="service-card" style="background-image: url('assets/img/services/values.jpg');">
+                    <div class="service-content">
+                        <h3>Value Added Services</h3>
+                        <p>Additional specialized services including packaging, labeling, quality inspection, and customized solutions to meet unique client requirements.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>    
+    <iframe id="menuIframe" src="menuBtn.html" style="position:fixed;top:38px;width:100vw;height:100vh;border:none;z-index:9999;background:transparent;pointer-events:auto;" allowtransparency="true" scrolling="no"></iframe>
 </body>
 </html>

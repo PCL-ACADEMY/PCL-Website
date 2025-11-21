@@ -8,10 +8,10 @@ body {
 }
 .menu-btn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
+  top: calc(50% + 10%); /* Instead of transform, use calc for initial position */
+  left: 48%;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: rgba(30,30,30,0.4);
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
@@ -25,6 +25,7 @@ body {
   border: 2px solid rgba(255,255,255,0.25);
   padding: 0;
   backdrop-filter: blur(2px);
+  overflow: visible;
 }
 .menu-btn:active {
   background: rgba(30,30,30,0.7);
@@ -36,8 +37,8 @@ body {
   pointer-events: none;
 }
 .menu-btn img {
-  width: 38px;
-  height: 38px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: block;
   pointer-events: none;
@@ -45,17 +46,46 @@ body {
   background: transparent;
   box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
 }
+.menu-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(155, 155, 155, 0.555);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.7;
+  z-index: 0;
+  animation: menuBtnWave 1.6s infinite cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+@keyframes menuBtnWave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
 .assistive-menu {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
-  width: 270px;
-  height: 270px;
+  /* Remove default bottom and right so JS can control position */
+  /* bottom: 100px; */
+  /* right: 30px; */
+  width: 290px;
+  height: 220px;
   background: rgba(36,41,46,0.90); /* Default transparency */
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.22);
-  display: none;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
@@ -65,6 +95,8 @@ body {
   border: 1.5px solid #2226;
   backdrop-filter: blur(8px);
   padding: 0;
+  left: 0; /* Default, will be set by JS */
+  top: 0;  /* Default, will be set by JS */
 }
 
 .assistive-menu.active-transparency {
@@ -75,55 +107,85 @@ body {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
+  /* Remove any right/bottom when shown, use left/top only */
+  right: unset !important;
+  bottom: unset !important;
 }
 .assistive-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0;
-  align-items: center;
-  justify-items: center;
-  padding: 24px 0 0 0;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: block;
 }
 .assistive-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.08em;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  width: 80px;
-  height: 80px;
   border-radius: 18px;
-  transition: background 0.18s, color 0.18s;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
   margin: 0;
   padding: 0;
   text-align: center;
   gap: 8px;
 }
-.assistive-item:hover {
-  background: rgba(255,255,255,0.08);
-  color: #ffe082;
+/* 7 items, evenly spaced around the circle, skipping the center logo */
+.assistive-item:nth-child(2) { /* Home */
+  transform: translate(-50%, -50%) rotate(-90deg) translate(90px) rotate(90deg);
 }
-.assistive-item svg {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 2px;
-  fill: #fff;
-  opacity: 0.92;
-  transition: fill 0.18s;
+.assistive-item:nth-child(3) { /* Service */
+  transform: translate(-50%, -50%) rotate(-38.57deg) translate(90px) rotate(38.57deg);
 }
-.assistive-item:hover svg {
-  fill: #ffe082;
+.assistive-item:nth-child(4) { /* Academy */
+  transform: translate(-50%, -50%) rotate(12.86deg) translate(90px) rotate(-12.86deg);
+}
+.assistive-item:nth-child(5) { /* Transport */
+  transform: translate(-50%, -50%) rotate(64.29deg) translate(90px) rotate(-64.29deg);
+}
+.assistive-item:nth-child(6) { /* Events */
+  transform: translate(-50%, -50%) rotate(115.71deg) translate(90px) rotate(-115.71deg);
+}
+.assistive-item:nth-child(7) { /* Enerhia */
+  transform: translate(-50%, -50%) rotate(167.14deg) translate(90px) rotate(-167.14deg);
+}
+.assistive-item:nth-child(8) { /* Careers */
+  transform: translate(-50%, -50%) rotate(218.57deg) translate(90px) rotate(-218.57deg);
+}
+
+/* Center logo (optional, if you want a logo in the middle) */
+.assistive-center-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.assistive-center-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0002;
+  background: #fff0;
 }
 .assistive-label {
-  font-size: 0.98em;
+  font-size: 1em;
   margin-top: 2px;
   letter-spacing: 0.01em;
   text-shadow: 0 1px 2px #0003;
@@ -148,5 +210,101 @@ body {
   .assistive-item svg {
     width: 22px;
     height: 22px;
+  }
+}
+
+/* Responsive styles for .menu-btn and .assistive-menu */
+@media (max-width: 700px) {
+  .menu-btn {
+    width: 48px;
+    height: 48px;
+    top: unset;
+    bottom: 24px;
+    left: 24px;
+    right: unset;
+    min-width: 44px;
+    min-height: 44px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    padding: 0;
+  }
+  .menu-btn img {
+    width: 28px;
+    height: 28px;
+  }
+  .assistive-menu {
+    width: 90vw;
+    height: 90vw;
+    min-width: 0;
+    min-height: 0;
+    right: 5vw;
+    bottom: 5vw;
+    border-radius: 16px;
+    padding: 0;
+  }
+  .assistive-grid {
+    width: 80vw;
+    height: 80vw;
+  }
+  .assistive-item {
+    width: 44px;
+    height: 44px;
+    font-size: 0.92em;
+    border-radius: 10px;
+  }
+  .assistive-center-logo, .assistive-center-logo img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+  .assistive-menu {
+    left: 50% !important;
+    top: 50% !important;
+    right: unset !important;
+    bottom: unset !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+    left: 10px;
+    bottom: 10px;
+  }
+  .menu-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  .assistive-menu {
+    width: 98vw;
+    height: 98vw;
+    right: 1vw;
+    bottom: 1vw;
+    border-radius: 10px;
+  }
+  .assistive-grid {
+    width: 90vw;
+    height: 90vw;
+  }
+  .assistive-item {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85em;
+    border-radius: 6px;
+  }
+  .assistive-center-logo, .assistive-center-logo img {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+  }
+  .assistive-menu {
+    left: 50% !important;
+    top: 50% !important;
+    right: unset !important;
+    bottom: unset !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
   }
 }
