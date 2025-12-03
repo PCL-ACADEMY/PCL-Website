@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCL - Careers</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Producers Connection Logistics Inc.</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="main-header">
-    <h1>Careers</h1>
-    <p>Welcome to the Careers page.</p>
-  </header>
-  <section class="openings-section">
-    <h2>Job Openings</h2>
-    <ul>
-      <li>Logistics Coordinator</li>
-      <li>Driver</li>
-      <li>Event Staff</li>
-      <li>Academy Trainer</li>
-    </ul>
-  </section>
-  <section class="benefits-section">
-    <h2>Why Work With Us?</h2>
-    <p>Competitive salary, growth opportunities, and a supportive team environment.</p>
-  </section>
-  <section class="apply-section">
-    <h2>How to Apply</h2>
-    <p>Email your resume to careers@pcl.com or fill out our online application form.</p>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 PCL. All rights reserved.</p>
-  </footer>
-  <button class="menu-btn" id="menuBtn" title="Menu">
-    <img src="assets/img/logo.png" alt="Menu">
-  </button>
-  <div class="assistive-menu" id="assistiveMenu">
-    <div class="assistive-grid">
-      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">PCL Academy</span></div>
-      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+    <!-- Sticky Mother Header -->
+    <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
+
+    <!-- Hero Section -->
+    <section id="home" class="events-carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="assets/img/careers/1.png" alt="Slide 1" class="carousel-img active">
+                <img src="assets/img/careers/2.png" alt="Slide 2" class="carousel-img">
+                <img src="assets/img/careers/3.png" alt="Slide 3" class="carousel-img">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Events Role Section -->
+
+
+    <button class="menu-btn" id="menuBtn" title="Menu">
+        <img src="assets/img/logo.png" alt="Menu">
+        <div class="speech-bubble" id="speechBubble">Drag Me</div>
+    </button>
+    <div class="assistive-menu" id="assistiveMenu">
+        <div class="assistive-grid">
+        <div class="assistive-center-logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+        <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+        <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+        <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+        <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+        </div>
     </div>
-  </div>
-  <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
