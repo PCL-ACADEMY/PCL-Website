@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCL - Producers Connection Logistics Inc.</title>
     <link rel="icon" type="image/png" href="assets/img/logo.png">
-    <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style> .menu-btn { position: fixed; z-index: 9999 !important; background: none; border: none; cursor: pointer; padding: 0; } </style>
 </head>
 <body>
     <!-- Sticky Mother Header -->
@@ -26,50 +27,60 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <video class="hero-video" autoplay muted loop>
-            <source src="assets/vid/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <h1>TRANSPORT</h1>
-            <p style="font-size: 1.6rem;">We take pride in delivering logistics services that are built on trust, handled with care, and maintained with the highest standards of cleanliness and professionalism.</p>
-        </div>        
-        <div class="hero-overlay"></div>
-    </section>
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About PCL</h2>
-                    <p style="font-size: 1.3rem;">Being in the industry for more than 2 decades, Producers Connections Logistics Incorporated has been consistent in developing a strong relationship with its customer and business partners.</p>
-                    <p style="font-size: 1.3rem;">PCL has been the preferred choice to several companies operating it the company in terms of product handling, distribution, transportation, warehousing, and other logistics- related services.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>10,000+</h3>
-                            <p>Trips Monthly</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>3+</h3>
-                            <p>Countries Served</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10</h3>
-                            <p>Warehouse Facilities</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>200+</h3>
-                            <p>Trucks</p>
+    <section id="home" class="transport-section">
+        <div class="transport-flex">
+            <div class="transport-video-col">
+                <video class="transport-video" autoplay muted loop>
+                    <source src="assets/vid/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="transport-content-col">
+                <div class="transport-content">
+                    <div class="transport1-text">
+                        <h2>PCL Triumphus</h2>
+                        <p style="font-size: 1.3rem;">Being in the industry for more than 2 decades, Producers Connections Logistics Incorporated has been consistent in developing a strong relationship with its customer and business partners.</p>
+                        <p style="font-size: 1.3rem;">PCL has been the preferred choice to several companies operating it the company in terms of product handling, distribution, transportation, warehousing, and other logistics- related services.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>10,000+</h3>
+                                <p>Trips Monthly</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>3+</h3>
+                                <p>Countries Served</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>10</h3>
+                                <p>Warehouse Facilities</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>200+</h3>
+                                <p>Trucks</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="assets/img/map.png" alt="About PCL">
+            </div>
+        <div class="transport-overlay"></div>
+    </section>
+    <!-- About Us Section -->
+    <section id="home" class="transport1-section">
+        <div class="transport1-flex">
+            <div class="transport1-content-col">
+                <div class="transport-content">
+                    <div class="transport1-text">
+                        <h2>About PCL</h2>
+                        <p style="font-size: 1.3rem;">Being in the industry for more than 2 decades, Producers Connections Logistics Incorporated has been consistent in developing a strong relationship with its customer and business partners.</p>
+                        <p style="font-size: 1.3rem;">PCL has been the preferred choice to several companies operating it the company in terms of product handling, distribution, transportation, warehousing, and other logistics- related services.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>    
+            <div class="transport1-image-col">
+                <img class="transport1-image" src="assets/img/trans_img.png" alt="About PCL">
+            </div>
+        <div class="transport1-overlay"></div>
+    </section>
     <section id="services" class="services-section">
         <div class="container">
             <h2>Our Services</h2>            
@@ -112,7 +123,67 @@
                 </a>
             </div>
         </div>
-    </section>    
-    <iframe id="menuIframe" src="menuBtn.html" style="position:fixed;top:38px;width:100vw;height:100vh;border:none;z-index:9999;background:transparent;pointer-events:auto;" allowtransparency="true" scrolling="no"></iframe>
+    </section>
+    <section id="location" class="map-section">
+        <div class="map-frame-fullwidth">
+            <div id="customMapTransport" style="width:100%;height:600px;"></div>
+            <div id="mapLowerLeftTextTransport" style="position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,0.8);padding:6px 12px;border-radius:6px;font-weight:600;z-index:400;">PCL Parañaque Location</div>
+        </div>
+    </section>
+    <button class="menu-btn" id="menuBtn" title="Menu">
+        <img src="assets/img/logo.png" alt="Menu">
+        <div class="speech-bubble" id="speechBubble">Drag Me</div>
+    </button>
+    <div class="assistive-menu" id="assistiveMenu">
+        <div class="assistive-grid">
+        <div class="assistive-center-logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+        <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+        <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+        <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+        <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+    const transportLocation = {
+        name: 'Km 19 W Service Rd, Parañaque, Metro Manila',
+        coords: [14.4579, 121.0448],
+        address: 'Km 19 W Service Rd, Parañaque, Metro Manila',
+        img: 'assets/img/map/parañaque.png'
+    };
+    const mapTransport = L.map('customMapTransport');
+    const maroonIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(mapTransport);
+    const marker = L.marker(transportLocation.coords, { icon: maroonIcon }).addTo(mapTransport);
+    marker.bindPopup(`
+        <div style='text-align:center; margin: -14px -26px -5px -22px;'>
+            <img src='${transportLocation.img}' alt='${transportLocation.name}' style='width:140px; border-radius:8px; margin-bottom:2px;'>
+            <h3 style='margin-top: 5px;'>${transportLocation.name}</h3>
+            <p style='font-size:1rem; margin: 1px 0 -1px 0;'>${transportLocation.address}</p>
+        </div>
+    `);
+    marker.on('mouseover', function(e) {
+        this.openPopup();
+    });
+    marker.on('mouseout', function(e) {
+        this.closePopup();
+    });
+    mapTransport.setView(transportLocation.coords, 15);
+    </script>
 </body>
 </html>
