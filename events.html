@@ -1,48 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCL - Events</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Producers Connection Logistics Inc.</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="main-header">
-    <h1>Events</h1>
-    <p>Welcome to the Events page.</p>
-  </header>
-  <section class="upcoming-section">
-    <h2>Upcoming Events</h2>
-    <ul>
-      <li>Annual Logistics Summit</li>
-      <li>Driver Training Workshop</li>
-      <li>Community Outreach</li>
-    </ul>
-  </section>
-  <section class="past-section">
-    <h2>Past Highlights</h2>
-    <p>See photos and stories from our previous events.</p>
-  </section>
-  <section class="register-section">
-    <h2>Register for an Event</h2>
-    <p>Contact us to reserve your spot at our next event.</p>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 PCL. All rights reserved.</p>
-  </footer>
-  <button class="menu-btn" id="menuBtn" title="Menu">
-    <img src="assets/img/logo.png" alt="Menu">
-  </button>
-  <div class="assistive-menu" id="assistiveMenu">
-    <div class="assistive-grid">
-      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">PCL Academy</span></div>
-      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+    <!-- Sticky Mother Header -->
+    <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
+
+    <!-- Hero Section -->
+    <section id="home" class="events-carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="assets/img/events/1.png" alt="Slide 1" class="carousel-img active">
+                <img src="assets/img/news2.png" alt="Slide 2" class="carousel-img">
+                <img src="assets/img/about.png" alt="Slide 3" class="carousel-img">
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Events Hero Section with Horizontal Card Layout -->
+     <section id="hero" class="events-hero-section">
+        <div class="events-gallery-wrapper">
+            <button class="gallery-nav-btn prev-gallery" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="events-gallery-track">
+                <!-- Event Card 1 -->
+                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl1.png" alt="Event 1" class="event-card-img" />
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card" data-image="assets/img/events/news/news2.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl2.png" alt="Event 2" class="event-card-img" />
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl1.png" alt="Event 3" class="event-card-img" />
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl1.png" alt="Event 4" class="event-card-img" />
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl1.png" alt="Event 5" class="event-card-img" />
+                </div>
+ 
+                <!-- Event Card 6 -->
+                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl1.png" alt="Event 6" class="event-card-img" />
+                </div>
+            </div>
+            
+            <button class="gallery-nav-btn next-gallery" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="container">
+            <div class="centered-text">
+                <h2>PCL Events</h2>
+                <p><b><i>Producers Connection Logistics</i></b> continues to conduct various activities throughout the year, and here are some of the events and initiatives that took place.</p>
+            </div>
+        </div>
+        
+        <!-- Modal for image preview -->
+        <div id="eventModal" class="event-modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modalImg" alt="Event Preview">
+        </div>
+    </section>
+
+
+
+
+
+    <button class="menu-btn" id="menuBtn" title="Menu">
+        <img src="assets/img/logo.png" alt="Menu">
+        <div class="speech-bubble" id="speechBubble">Drag Me</div>
+    </button>
+    <div class="assistive-menu" id="assistiveMenu">
+        <div class="assistive-grid">
+        <div class="assistive-center-logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+        <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+        <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+        <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+        <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+        </div>
     </div>
-  </div>
-  <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
+    <script>
+    // Carousel functionality
+    const slides = document.querySelectorAll('.carousel-img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+    function nextSlide() {
+        let next = (currentIndex + 1) % slides.length;
+        showSlide(next);
+    }
+    function prevSlide() {
+        let prev = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 7000); 
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    showSlide(0);
+    startAutoSlide();
+
+    // Enable drag-to-scroll for gallery
+    const galleryTrack = document.querySelector('.events-gallery-track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    galleryTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        galleryTrack.classList.add('active');
+        startX = e.pageX - galleryTrack.offsetLeft;
+        scrollLeft = galleryTrack.scrollLeft;
+    });
+    galleryTrack.addEventListener('mouseleave', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mouseup', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - galleryTrack.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed
+        galleryTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    // Next/Prev buttons scroll the gallery left/right
+    const prevGalleryBtn = document.querySelector('.prev-gallery');
+    const nextGalleryBtn = document.querySelector('.next-gallery');
+    prevGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    nextGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // Event card modal functionality
+    const eventCards = document.querySelectorAll('.event-card');
+    const eventModal = document.getElementById('eventModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Show modal with the clicked card's image
+    function showEventModal(card) {
+        const imageSrc = card.getAttribute('data-image');
+        eventModal.style.display = 'flex';
+        modalImg.src = imageSrc;
+        modalImg.alt = 'Event Image';
+        modalImg.classList.remove('zoomed');
+    }
+
+    eventCards.forEach(card => {
+        card.addEventListener('click', () => {
+            showEventModal(card);
+        });
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                showEventModal(card);
+            }
+        });
+    });
+
+    // Zoom functionality for modal image
+    modalImg.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+        if (this.classList.contains('zoomed')) {
+            eventModal.classList.add('zoom-scroll');
+        } else {
+            eventModal.classList.remove('zoom-scroll');
+        }
+    });
+
+    closeModal.onclick = function() {
+        eventModal.style.display = 'none';
+        modalImg.classList.remove('zoomed');
+        eventModal.classList.remove('zoom-scroll');
+    };
+
+    window.onclick = function(event) {
+        if (event.target === eventModal) {
+            eventModal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            eventModal.classList.remove('zoom-scroll');
+        }
+    };
+    </script>
 </body>
 </html>

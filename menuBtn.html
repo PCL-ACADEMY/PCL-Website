@@ -1,34 +1,37 @@
 <html style="background: transparent !important;">
 <head>
-<link rel="stylesheet" href="assets/css/general.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-  html, body {
-    background: transparent !important;
-    background-color: transparent !important;
-  }
-</style>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style> 
+  body {
+  pointer-events: none !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+#menuBtn, #assistiveMenu {
+  pointer-events: auto !important;
+  z-index: 10000 !important;
+}
+  </style>
 </head>
-<body style="background: transparent !important;">
-<button class="menu-btn" id="menuBtn" title="Menu">
-<img src="assets/img/logo.png" alt="Menu">
-</button>
-<div class="assistive-menu" id="assistiveMenu">
-<div class="assistive-grid">
-<div class="assistive-center-logo">
-<img src="assets/img/logo.png" alt="Logo">
-</div>
-<div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-<div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-<div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
-<div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
-<div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-<div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
-<div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-</div>
-</div>
+  <button class="menu-btn" id="menuBtn" title="Menu">
+    <img src="assets/img/logo.png" alt="Menu">
+    <div class="speech-bubble" id="speechBubble">Drag Me</div>
+  </button>
+  <div class="assistive-menu" id="assistiveMenu">
+    <div class="assistive-grid">
+      <div class="assistive-center-logo">
+        <img src="assets/img/logo.png" alt="Logo">
+      </div>
+      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+      <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+    </div>
+  </div>
 <script src="assets/js/script.js"></script>
-</body>
 </html>
