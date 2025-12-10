@@ -13,23 +13,10 @@
     <!-- Sticky Mother Header -->
     <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
 
-    <!-- Hero Section -->
-    <section id="home" class="events-carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="assets/img/events/1.png" alt="Slide 1" class="carousel-img active">
-                <img src="assets/img/news2.png" alt="Slide 2" class="carousel-img">
-                <img src="assets/img/about.png" alt="Slide 3" class="carousel-img">
-            </div>
-            <button class="carousel-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-            <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-            <div class="carousel-dots">
-                <span class="carousel-dot active"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-            </div>
-        </div>
-        <div class="hero-overlay"></div>
+    <!-- Hero Section replaced with iframe for services.html -->
+    <section id="home" class="events-carousel-section" style="padding:0; margin:0; border:none; height:100vh; min-height:400px; position:relative; z-index:1;">
+        <iframe src="services.html" style="width:100vw; height:100vh; border:none; display:block; position:absolute; top:0; left:0; z-index:1; background:#000;" allowfullscreen></iframe>
+        <div class="hero-overlay" style="z-index:2; pointer-events:none;"></div>
     </section>
 
     <!-- Events Hero Section with Horizontal Card Layout -->
