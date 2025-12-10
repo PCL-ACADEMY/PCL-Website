@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.pcla-hero-section {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../img/pcla/main.png');
+    background-size: cover;
+    background-position: left;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.pcla-hero-content {
+    text-align: center;
+    color: white;
+    z-index: 3;
+    width: 100%;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+.pcla-hero-content h1 {
+    padding: 100px 0 20px 20px;
+    font-size: 100px;
+    font-weight: 1000;
+    margin-bottom: 0px;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    word-break: break-word;
+}
+
+.pcla-hero-content p {
+    font-size: 30px;
+    padding: 10px 0 20px 20px;
+    margin-bottom: 0px;
+    opacity: 0.95;
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+    word-break: break-word;
+}
+
+.pcla-hero-logo {
+    margin-bottom: 40px;
+}
+
+.pcla-hero-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.cta-button {
+    background: #fff;
+    color: #001a1a;
+    padding: clamp(12px, 2vw, 16px) clamp(25px, 4vw, 35px);
+    margin-top: 250px;
+    border: none;
+    border-radius: 30px;
+    font-size: clamp(16px, 2.5vw, 18px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Company Section */
+.company-section {
+    padding: 80px 0;
+    background: #ffffff url('../img/pcla/main1a.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* PCL Exam Section (company-section1 replacement) */
+.pcl-exam-section {
+    width: 100%;
+    min-height: 420px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.pcl-exam-bg {
+    width: 100%;
+    min-height: 920px;
+    background: url('../img/pcla/main3.png') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.pcl-exam-card {
+    background: rgba(128, 0, 0, 0.85);
+    border-radius: 18px;
+    padding: 38px 32px 28px 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+.pcl-exam-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+.pcl-exam-card p {
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+.pcl-exam-btn {
+    background: #fff;
+    color: #800000;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 22px;
+    padding: 8px 28px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+}
+.pcl-exam-btn:hover {
+    background: #800000;
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .pcl-exam-card {
+        max-width: 95vw;
+        padding: 28px 10px 18px 10px;
+    }
+    .pcl-exam-card h2 {
+        font-size: 1.3rem;
+    }
+    .pcl-exam-card p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .pcl-exam-bg {
+        min-height: 320px;
+    }
+    .pcl-exam-card {
+        padding: 18px 4vw 12px 4vw;
+    }
+    .pcl-exam-card h2 {
+        font-size: 1.1rem;
+    }
+    .pcl-exam-card p {
+        font-size: 0.95rem;
+    }
+    .pcl-exam-btn {
+        font-size: 0.95rem;
+        padding: 7px 18px;
+    }
+}
+
+/* PCL Academy Section (company-section) */
+.pcl-academy-section {
+    background: #222 url('../img/pcla/main2.png') center center/cover;
+    color: #fff;
+    padding: 60px 0 30px 0;
+}
+.pcl-academy-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.pcl-academy-header {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.pcl-academy-desc {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.pcl-academy-script {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Brush Script MT', cursive;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.pcl-academy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    justify-items: center;
+    align-items: start;
+    margin-bottom: 30px;
+}
+.pcl-academy-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pcl-academy-img {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0005;
+}
+.pcl-academy-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 12px;
+    text-align: center;
+}
+.pcl-academy-footer {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+    .pcl-academy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .pcl-academy-header {
+        font-size: 1.5rem;
+    }
+    .pcl-academy-script {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 600px) {
+    .pcl-academy-section {
+        padding: 30px 0 10px 0;
+    }
+    .pcl-academy-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .pcl-academy-img {
+        max-width: 100%;
+        height: 120px;
+    }
+    .pcl-academy-header {
+        font-size: 1.1rem;
+    }
+    .pcl-academy-script {
+        font-size: 1rem;
+    }
+}
+
+/* Energy Efficiency Section */
+.efficiency-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.efficiency-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.efficiency-text h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.efficiency-text p {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.efficiency-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.efficiency-image-box {
+    border: 2px solid #333;
+    padding: 20px;
+    background: #f0f0f0;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Service Review Section */
+.review-section {
+    padding: 80px 0;
+    background: linear-gradient(rgba(0, 26, 26, 0.664), rgba(0, 26, 26, 0.35)), url('../img/pcla/main3bg.png') no-repeat center center;
+    background-size: cover;
+}
+
+.review-section h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #ffffff;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.review-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.video-container {
+    border: 2px solid #333;
+    background: #000000;
+    padding: 0px;
+    text-align: center;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.video-placeholder {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 40px solid #333;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    margin-left: 10px;
+}
+
+.video-caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+.review-text {
+    background-color: #001a1ac0;
+    padding: 25px 20px 25px 20px;
+    border-radius: 10px;
+}
+
+.review-text h3 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.review-text p {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.review-text li {
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+
+/* Eniscope Section */
+.eniscope-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.eniscope-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.eniscope-image {
+    border: 2px solid #333;
+    padding: 40px;
+    background: #f0f0f0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eniscope-text h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.eniscope-text h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.eniscope-text p {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.gallery-item {
+    position: relative;
+    border: 2px solid #333;
+    background: #ddd;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:first-child {
+    background: #333;
+    color: white;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .cta-button {
+        display: inline-block;
+        margin-top: 50px;
+        font-size: 15px;
+        padding: 10px 18px;
+        text-align: center;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .company-content,
+    .efficiency-content,
+    .review-content,
+    .eniscope-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .efficiency-images {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-button {
+        display: inline-block;
+        margin-top: 120px;
+        font-size: 14px;
+        padding: 8px 14px;
+        text-align: center;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .pcla-hero-content h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        word-break: break-word;
+    }
+
+    .pcla-hero-content p {
+        text-align: center;
+        font-size: clamp(1.1rem, 6vw, 2rem);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 600px) {
+    .pcla-hero-section {
+        min-height: 500px;
+    }
+
+    .company-image img {
+        height: 300px;
+    }
+
+    .video-container {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        min-height: 180px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-top: 120px;
+        text-align: center;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .pcla-hero-content h1 {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        word-break: break-word;
+    }
+
+    .pcla-hero-content p {
+        text-align: center;
+        font-size: clamp(0.9rem, 8vw, 1.1rem);
+        margin-top: 10px;
+        margin-bottom: 80px;
+        word-break: break-word;
+    }
+}
