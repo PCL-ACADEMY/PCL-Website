@@ -1,52 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCL - Enerhia</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Producers Connection Logistics Inc.</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/enerhia.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="background:#181818;">
-  <header class="main-header">
-    <h1 style="color:#fff;">Enerhia</h1>
-    <p style="color:#fff;">Welcome to the Enerhia page.</p>
-  </header>
-  <section class="about-section">
-    <h2 style="color:#fff;">About Enerhia</h2>
-    <p style="color:#fff;">Enerhia is our green initiative for sustainable logistics and energy solutions.</p>
-  </section>
-  <section class="projects-section">
-    <h2 style="color:#fff;">Projects</h2>
-    <ul style="color:#fff;">
-      <li>Solar-powered Warehouses</li>
-      <li>Electric Vehicle Fleet</li>
-      <li>Eco-friendly Packaging</li>
-    </ul>
-  </section>
-  <section class="contact-section">
-    <h2 style="color:#fff;">Contact Enerhia Team</h2>
-    <p style="color:#fff;">Email: enerhia@pcl.com</p>
-  </section>
-  <footer class="main-footer">
-    <p style="color:#fff;">&copy; 2025 PCL. All rights reserved.</p>
-  </footer>
-  <button class="menu-btn" id="menuBtn" title="Menu">
-    <img src="assets/img/logo.png" alt="Menu">
-  </button>
-  <div class="assistive-menu" id="assistiveMenu">
-    <div class="assistive-grid">
-      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">PCL Academy</span></div>
-      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
-      <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+<body>
+    <!-- Sticky Mother Header -->
+    <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
+
+    <!-- Hero Section -->
+    <section class="enerhia-hero-section">
+        <div class="enerhia-hero-content">
+            <h1>Sustainable Power,<br>Measurable Impact</h1>
+            <p>Gain full visibility and control over usage to<br>streamline operations and reduce waste.</p>
+            <a href="https://enerhia.ph/" class="cta-button" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Our Company Section -->
+    <section class="company-section">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-image">
+                  <img src="assets/img/enerhia/main1.png" alt="Company">
+                </div>
+                <div class="company-text">
+                    <h2>Our Company</h2>
+                    <p>We deliver world-class energy and smart-building solutions across the Philippines—empowering businesses to reduce consumption, optimize performance, and transform their facilities into intelligent, efficient environments.</p>
+                    <p>Our mission is to make a meaningful and lasting contribution to the country by advancing the way energy is managed. We aim to deliver solutions that drive greater efficiency, foster innovation, and generate measurable cost savings for businesses and communities. At the same time, we strive to create positive environmental impact—promoting sustainability, reducing carbon footprints, and supporting a cleaner, greener future for the Philippines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Review Section -->
+    <section class="review-section">
+        <div class="container">
+            <h2>Service Review</h2>
+            <div class="review-content">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-icon"></div>
+                    </div>
+                    <p class="video-caption">Promotional Video</p>
+                </div>
+                <div class="review-text">
+                    <h3>What Truly Drives Long-Term Energy Efficiency</h3>
+                    <p>Achieving substantial and long-lasting energy savings requires more than just installing efficient equipment—it demands a holistic, well-coordinated strategy. True energy optimization is possible only when hardware, software, and service work seamlessly together.</p>
+                    <p>When these three essential components operate in harmony, businesses can unlock higher performance, reduce operating costs, maintain consistent savings, and build a smarter, more sustainable energy ecosystem for the long term.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="menu-btn" id="menuBtn" title="Menu">
+        <img src="assets/img/logo.png" alt="Menu">
+        <div class="speech-bubble" id="speechBubble">Drag Me</div>
+    </button>
+    <div class="assistive-menu" id="assistiveMenu">
+        <div class="assistive-grid">
+        <div class="assistive-center-logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+        <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+        <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+        <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+        <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+        </div>
     </div>
-    <div class="assistive-center-logo">
-      <img src="assets/img/logo.png" alt="Logo">
-    </div>
-  </div>
-  <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
+    <script>
+    // Carousel functionality
+    const slides = document.querySelectorAll('.carousel-img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+    function nextSlide() {
+        let next = (currentIndex + 1) % slides.length;
+        showSlide(next);
+    }
+    function prevSlide() {
+        let prev = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 7000); 
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    showSlide(0);
+    startAutoSlide();
+
+    // Enable drag-to-scroll for gallery
+    const galleryTrack = document.querySelector('.events-gallery-track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    galleryTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        galleryTrack.classList.add('active');
+        startX = e.pageX - galleryTrack.offsetLeft;
+        scrollLeft = galleryTrack.scrollLeft;
+    });
+    galleryTrack.addEventListener('mouseleave', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mouseup', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - galleryTrack.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed
+        galleryTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    // Next/Prev buttons scroll the gallery left/right
+    const prevGalleryBtn = document.querySelector('.prev-gallery');
+    const nextGalleryBtn = document.querySelector('.next-gallery');
+    prevGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    nextGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // Event card modal functionality
+    const eventCards = document.querySelectorAll('.event-card');
+    const eventModal = document.getElementById('eventModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Show modal with the clicked card's image
+    function showEventModal(card) {
+        const imageSrc = card.getAttribute('data-image');
+        eventModal.style.display = 'flex';
+        modalImg.src = imageSrc;
+        modalImg.alt = 'Event Image';
+        modalImg.classList.remove('zoomed');
+    }
+
+    eventCards.forEach(card => {
+        card.addEventListener('click', () => {
+            showEventModal(card);
+        });
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                showEventModal(card);
+            }
+        });
+    });
+
+    // Zoom functionality for modal image
+    modalImg.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+        if (this.classList.contains('zoomed')) {
+            eventModal.classList.add('zoom-scroll');
+        } else {
+            eventModal.classList.remove('zoom-scroll');
+        }
+    });
+
+    closeModal.onclick = function() {
+        eventModal.style.display = 'none';
+        modalImg.classList.remove('zoomed');
+        eventModal.classList.remove('zoom-scroll');
+    };
+
+    window.onclick = function(event) {
+        if (event.target === eventModal) {
+            eventModal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            eventModal.classList.remove('zoom-scroll');
+        }
+    };
+    </script>
 </body>
 </html>
