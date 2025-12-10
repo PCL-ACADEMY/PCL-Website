@@ -1,48 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCL Academy</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL - Producers Connection Logistics Inc.</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/pcla.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="main-header">
-    <h1>PCL Academy</h1>
-    <p>Welcome to the PCL Academy page.</p>
-  </header>
-  <section class="about-section">
-    <h2>About the Academy</h2>
-    <p>Learn about our mission and training philosophy.</p>
-  </section>
-  <section class="courses-section">
-    <h2>Courses Offered</h2>
-    <ul>
-      <li>Logistics Management</li>
-      <li>Driver Training</li>
-      <li>Event Planning</li>
-    </ul>
-  </section>
-  <section class="enroll-section">
-    <h2>How to Enroll</h2>
-    <p>Contact us to join our next batch of trainees.</p>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 PCL. All rights reserved.</p>
-  </footer>
-  <button class="menu-btn" id="menuBtn" title="Menu">
-    <img src="assets/img/logo.png" alt="Menu">
-  </button>
-  <div class="assistive-menu" id="assistiveMenu">
-    <div class="assistive-grid">
-      <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-      <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
-      <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">PCL Academy</span></div>
-      <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
-      <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
-      <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+    <!-- Sticky Mother Header -->
+    <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
+
+    <!-- Hero Section -->
+    <section class="pcla-hero-section">
+        <div class="pcla-hero-content">
+        </div>
+    </section>
+
+    <!-- Our Company Section -->
+    <!-- <section class="pcl-academy-section">
+        <div class="container">
+            <h2 class="pcl-academy-header">Welcome to the PCL Academy</h2>
+            <p class="pcl-academy-desc">Your hub for growth and continuous learning. Access training materials, development programs, and resources designed to help you enhance your skills, stay updated, and excel in your role. Together, we learn, grow, and succeed.</p>
+            <div class="pcl-academy-script">Empowering every employee<br>through learning.</div>
+            <div class="pcl-academy-grid">
+                <div class="pcl-academy-item">
+                    <img src="assets/img/pcla/pcla1.png" alt="New Employee Orientation" class="pcl-academy-img">
+                    <div class="pcl-academy-label">New Employee<br>Orientation</div>
+                </div>
+                <div class="pcl-academy-item">
+                    <img src="assets/img/pcla/pcla2.png" alt="Safety & Compliance" class="pcl-academy-img">
+                    <div class="pcl-academy-label">Safety & Compliance</div>
+                </div>
+                <div class="pcl-academy-item">
+                    <img src="assets/img/pcla/pcla3.png" alt="Training" class="pcl-academy-img">
+                    <div class="pcl-academy-label">Training</div>
+                </div>
+                <div class="pcl-academy-item">
+                    <img src="assets/img/pcla/pcla4.png" alt="Award" class="pcl-academy-img">
+                    <div class="pcl-academy-label">Award</div>
+                </div>
+            </div>
+            <div class="pcl-academy-footer">Here, you will find structured training modules, compliance courses, and skill-building resources essential to your career development and organizational excellence.</div>
+        </div>
+    </section> -->
+
+    <!-- <section class="pcl-exam-section">
+        <div class="pcl-exam-bg">
+            <div class="pcl-exam-card">
+                <h2>Take Your Exam Today!</h2>
+                <p>Be a part of PCL training program<br>and become better.</p>
+                <button class="pcl-exam-btn">Participate</button>
+            </div>
+        </div>
+    </section> -->
+    <button class="menu-btn" id="menuBtn" title="Menu">
+        <img src="assets/img/logo.png" alt="Menu">
+        <div class="speech-bubble" id="speechBubble">Drag Me</div>
+    </button>
+    <div class="assistive-menu" id="assistiveMenu">
+        <div class="assistive-grid">
+        <div class="assistive-center-logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
+        <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
+        <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
+        <div class="assistive-item" data-target="enerhia.html"><span class="assistive-label">Enerhia</span></div>
+        <div class="assistive-item" data-target="transport.html"><span class="assistive-label">Transport</span></div>
+        </div>
     </div>
-  </div>
-  <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
+    <script>
+    // Carousel functionality
+    const slides = document.querySelectorAll('.carousel-img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+    function nextSlide() {
+        let next = (currentIndex + 1) % slides.length;
+        showSlide(next);
+    }
+    function prevSlide() {
+        let prev = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 7000); 
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    showSlide(0);
+    startAutoSlide();
+
+    // Enable drag-to-scroll for gallery
+    const galleryTrack = document.querySelector('.events-gallery-track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    galleryTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        galleryTrack.classList.add('active');
+        startX = e.pageX - galleryTrack.offsetLeft;
+        scrollLeft = galleryTrack.scrollLeft;
+    });
+    galleryTrack.addEventListener('mouseleave', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mouseup', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - galleryTrack.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed
+        galleryTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    // Next/Prev buttons scroll the gallery left/right
+    const prevGalleryBtn = document.querySelector('.prev-gallery');
+    const nextGalleryBtn = document.querySelector('.next-gallery');
+    prevGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    nextGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // Event card modal functionality
+    const eventCards = document.querySelectorAll('.event-card');
+    const eventModal = document.getElementById('eventModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Show modal with the clicked card's image
+    function showEventModal(card) {
+        const imageSrc = card.getAttribute('data-image');
+        eventModal.style.display = 'flex';
+        modalImg.src = imageSrc;
+        modalImg.alt = 'Event Image';
+        modalImg.classList.remove('zoomed');
+    }
+
+    eventCards.forEach(card => {
+        card.addEventListener('click', () => {
+            showEventModal(card);
+        });
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                showEventModal(card);
+            }
+        });
+    });
+
+    // Zoom functionality for modal image
+    modalImg.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+        if (this.classList.contains('zoomed')) {
+            eventModal.classList.add('zoom-scroll');
+        } else {
+            eventModal.classList.remove('zoom-scroll');
+        }
+    });
+
+    closeModal.onclick = function() {
+        eventModal.style.display = 'none';
+        modalImg.classList.remove('zoomed');
+        eventModal.classList.remove('zoom-scroll');
+    };
+
+    window.onclick = function(event) {
+        if (event.target === eventModal) {
+            eventModal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            eventModal.classList.remove('zoom-scroll');
+        }
+    };
+    </script>
 </body>
 </html>
