@@ -13,10 +13,9 @@
     <!-- Sticky Mother Header -->
     <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
 
-    <!-- Hero Section replaced with iframe for services.html -->
-    <section id="home" class="events-carousel-section" style="padding:0; margin:0; border:none; height:100vh; min-height:400px; position:relative; z-index:1;">
-        <iframe src="services.html" style="width:100vw; height:100vh; border:none; display:block; position:absolute; top:0; left:0; z-index:1; background:#000;" allowfullscreen></iframe>
-        <div class="hero-overlay" style="z-index:2; pointer-events:none;"></div>
+    <!-- Hero Section -->
+    <section id="home" class="events-carousel-section">
+        <iframe src="events-home.html" style="width:100%;height:100%;border:none;"></iframe>
     </section>
 
     <!-- Events Hero Section with Horizontal Card Layout -->
@@ -38,8 +37,8 @@
                 </div>
 
                 <!-- Event Card 3 -->
-                <div class="event-card" data-image="assets/img/events/news/news1.png" tabindex="0">
-                    <img src="assets/img/events/hl/hl1.png" alt="Event 3" class="event-card-img" />
+                <div class="event-card" data-image="assets/img/events/news/news3.png" tabindex="0">
+                    <img src="assets/img/events/hl/hl3.png" alt="Event 3" class="event-card-img" />
                 </div>
 
                 <!-- Event Card 4 -->
@@ -99,7 +98,8 @@
         </div>
     </div>
 <script src="assets/js/script.js"></script>
-    <script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     // Carousel functionality
     const slides = document.querySelectorAll('.carousel-img');
     const dots = document.querySelectorAll('.carousel-dot');
@@ -138,55 +138,63 @@
             startAutoSlide();
         });
     });
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        stopAutoSlide();
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+    if (slides.length > 0) {
+        showSlide(0);
         startAutoSlide();
-    });
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
-    });
-    showSlide(0);
-    startAutoSlide();
+    }
 
     // Enable drag-to-scroll for gallery
     const galleryTrack = document.querySelector('.events-gallery-track');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    galleryTrack.addEventListener('mousedown', (e) => {
-        isDown = true;
-        galleryTrack.classList.add('active');
-        startX = e.pageX - galleryTrack.offsetLeft;
-        scrollLeft = galleryTrack.scrollLeft;
-    });
-    galleryTrack.addEventListener('mouseleave', () => {
-        isDown = false;
-        galleryTrack.classList.remove('active');
-    });
-    galleryTrack.addEventListener('mouseup', () => {
-        isDown = false;
-        galleryTrack.classList.remove('active');
-    });
-    galleryTrack.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - galleryTrack.offsetLeft;
-        const walk = (x - startX) * 1.5; // scroll speed
-        galleryTrack.scrollLeft = scrollLeft - walk;
-    });
+    if (galleryTrack) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        galleryTrack.addEventListener('mousedown', (e) => {
+            isDown = true;
+            galleryTrack.classList.add('active');
+            startX = e.pageX - galleryTrack.offsetLeft;
+            scrollLeft = galleryTrack.scrollLeft;
+        });
+        galleryTrack.addEventListener('mouseleave', () => {
+            isDown = false;
+            galleryTrack.classList.remove('active');
+        });
+        galleryTrack.addEventListener('mouseup', () => {
+            isDown = false;
+            galleryTrack.classList.remove('active');
+        });
+        galleryTrack.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - galleryTrack.offsetLeft;
+            const walk = (x - startX) * 1.5; // scroll speed
+            galleryTrack.scrollLeft = scrollLeft - walk;
+        });
+    }
 
     // Next/Prev buttons scroll the gallery left/right
     const prevGalleryBtn = document.querySelector('.prev-gallery');
     const nextGalleryBtn = document.querySelector('.next-gallery');
-    prevGalleryBtn.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-    nextGalleryBtn.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
-    });
+    if (prevGalleryBtn && nextGalleryBtn && galleryTrack) {
+        prevGalleryBtn.addEventListener('click', () => {
+            galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+        nextGalleryBtn.addEventListener('click', () => {
+            galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+    }
 
     // Event card modal functionality
     const eventCards = document.querySelectorAll('.event-card');
@@ -215,20 +223,24 @@
     });
 
     // Zoom functionality for modal image
-    modalImg.addEventListener('click', function() {
-        this.classList.toggle('zoomed');
-        if (this.classList.contains('zoomed')) {
-            eventModal.classList.add('zoom-scroll');
-        } else {
-            eventModal.classList.remove('zoom-scroll');
-        }
-    });
+    if (modalImg) {
+        modalImg.addEventListener('click', function() {
+            this.classList.toggle('zoomed');
+            if (this.classList.contains('zoomed')) {
+                eventModal.classList.add('zoom-scroll');
+            } else {
+                eventModal.classList.remove('zoom-scroll');
+            }
+        });
+    }
 
-    closeModal.onclick = function() {
-        eventModal.style.display = 'none';
-        modalImg.classList.remove('zoomed');
-        eventModal.classList.remove('zoom-scroll');
-    };
+    if (closeModal) {
+        closeModal.onclick = function() {
+            eventModal.style.display = 'none';
+            modalImg.classList.remove('zoomed');
+            eventModal.classList.remove('zoom-scroll');
+        };
+    }
 
     window.onclick = function(event) {
         if (event.target === eventModal) {
@@ -237,6 +249,7 @@
             eventModal.classList.remove('zoom-scroll');
         }
     };
-    </script>
+});
+</script>
 </body>
 </html>
