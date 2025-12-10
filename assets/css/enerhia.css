@@ -106,7 +106,14 @@ body {
 /* Company Section */
 .company-section {
     padding: 80px 0;
-    background: #ffffff;
+    background: #ffffff url('../img/enerhia/main1a.png') no-repeat center center;
+    background-size: cover;
+}
+
+.company-section1 {
+    padding: 80px 0;
+    background: linear-gradient(rgba(0, 26, 26, 0.664), rgba(0, 26, 26, 0.35)), url('../img/enerhia/main2bg.png') no-repeat center center;
+    background-size: cover;
 }
 
 .company-content {
@@ -133,15 +140,21 @@ body {
     object-fit: cover;
 }
 
+.company-text{
+    background-color: #001a1ac0;
+    padding: 20px;
+    border-radius: 25px;
+}
+
 .company-text h2 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: #333;
+    color: #ffffff;
     margin-bottom: 30px;
     font-weight: bold;
 }
 
 .company-text p {
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
     font-size: 18px;
     line-height: 1.7;
@@ -149,8 +162,6 @@ body {
 }
 
 .company-text p:first-of-type {
-    border: 3px solid #0C005A;
-    padding: 20px;
     border-radius: 8px;
     background: rgba(12, 0, 90, 0.05);
 }
@@ -206,13 +217,14 @@ body {
 /* Service Review Section */
 .review-section {
     padding: 80px 0;
-    background: #f8f8f8;
+    background: linear-gradient(rgba(0, 26, 26, 0.664), rgba(0, 26, 26, 0.35)), url('../img/enerhia/main3bg.png') no-repeat center center;
+    background-size: cover;
 }
 
 .review-section h2 {
     text-align: center;
     font-size: clamp(2rem, 4vw, 3rem);
-    color: #333;
+    color: #ffffff;
     margin-bottom: 60px;
     font-weight: bold;
 }
@@ -230,10 +242,10 @@ body {
 
 .video-container {
     border: 2px solid #333;
-    background: #ddd;
-    padding: 40px;
+    background: #000000;
+    padding: 0px;
     text-align: center;
-    min-height: 400px;
+    min-height: 520px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,20 +279,36 @@ body {
     margin-top: 20px;
 }
 
-.review-text h3 {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    color: #333;
-    margin-bottom: 30px;
-    font-weight: bold;
+.review-text {
+    background-color: #001a1ac0;
+    padding: 25px 20px 25px 20px;
+    border-radius: 10px;
 }
 
+.review-text h3 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 .review-text p {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
     line-height: 1.7;
     text-align: justify;
 }
+
+.review-text li {
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
 
 /* Eniscope Section */
 .eniscope-section {
