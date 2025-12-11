@@ -111,27 +111,24 @@ function updateRoleDetails(index) {
 
 function applyForJob() {
     const role = jobRoles[currentRoleIndex];
-    const email = 'pcl@gmail.com';
-    const subject = encodeURIComponent(`Application for ${role.title} Position`);
-    const body = encodeURIComponent(
-`Dear Hiring Manager,
+    const email = 'enanojra@gmail.com';
+    const subjectText = `Application for ${role.title} Position`;
+    const bodyText = `Dear Hiring Manager,\n\nI am writing to express my interest in the ${role.title} position at ${role.location}.\n\nRole: ${role.title}\nLocation: ${role.location}\n\nBrief Overview:\n${role.description}\n\nI believe my skills and experience align well with the requirements for this position. I have attached my resume for your review and would welcome the opportunity to discuss how I can contribute to your team.\n\nThank you for considering my application.\n\nBest regards`;
 
-I am writing to express my interest in the ${role.title} position at ${role.location}.
+    const subject = encodeURIComponent(subjectText);
+    const body = encodeURIComponent(bodyText);
 
-Role: ${role.title}
-Location: ${role.location}
+    // Gmail compose URL (opens compose in Gmail web). If user isn't logged in
+    // they'll be prompted to sign in. We open in a new tab and fall back to
+    // mailto: if the popup is blocked.
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${subject}&body=${body}`;
 
-Brief Overview:
-${role.description}
+    const newWin = window.open(gmailUrl, '_blank');
 
-I believe my skills and experience align well with the requirements for this position. I have attached my resume for your review and would welcome the opportunity to discuss how I can contribute to your team.
-
-Thank you for considering my application.
-
-Best regards`
-    );
-    
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    // If popup blocked or window failed to open, fallback to mailto
+    if (!newWin) {
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
 }
 
 // Initialize with first role
