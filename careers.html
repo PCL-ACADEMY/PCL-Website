@@ -17,9 +17,11 @@
     <section id="home" class="events-carousel-section">
         <div class="carousel-container">
             <div class="carousel-slide">
-                <img src="assets/img/careers/1.png" alt="Slide 1" class="carousel-img active">
-                <img src="assets/img/careers/2.png" alt="Slide 2" class="carousel-img">
-                <img src="assets/img/careers/3.png" alt="Slide 3" class="carousel-img">
+                <img src="assets/img/careers/c1.png" alt="Slide 1" class="carousel-img active">
+                <img src="assets/img/careers/c2.png" alt="Slide 2" class="carousel-img">
+                <img src="assets/img/careers/c3.png" alt="Slide 3" class="carousel-img">
+                <img src="assets/img/careers/c4.png" alt="Slide 4" class="carousel-img">
+                <img src="assets/img/careers/c5.png" alt="Slide 5" class="carousel-img">
             </div>
             <button class="carousel-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -32,7 +34,43 @@
         <div class="hero-overlay"></div>
     </section>
 
-    <!-- Events Role Section -->
+    <!-- Events Hero Section with Horizontal Card Layout -->
+    <section id="home" class="role-section">
+        <div class="role-flex">
+            <div class="role" style="background-color: black; font-weight: 500;">
+                <div class="role-item active" onclick="selectRole(0)">
+                    <h3>Software Engineer</h3>
+                    <p>Head Office</p>
+                </div>
+                <div class="role-item" onclick="selectRole(1)">
+                    <h3>Marketing Manager</h3>
+                    <p>Head Office</p>
+                </div>
+                <div class="role-item" onclick="selectRole(2)">
+                    <h3>HR Specialist</h3>
+                    <p>Head Office</p>
+                </div>
+                <div class="role-item" onclick="selectRole(3)">
+                    <h3>Financial Analyst</h3>
+                    <p>Head Office</p>
+                </div>
+                <div class="role-item" onclick="selectRole(4)">
+                    <h3>Product Designer</h3>
+                    <p>Head Office</p>
+                </div>
+                <div class="role-item" onclick="selectRole(5)">
+                    <h3>Sales Executive</h3>
+                    <p>Head Office</p>
+                </div>
+            </div>
+            <div class="role-details" id="roleDetails">
+                <!-- Content will be dynamically updated -->
+            </div>
+        </div>
+    </section>
+
+
+
 
 
     <button class="menu-btn" id="menuBtn" title="Menu">
@@ -54,5 +92,96 @@
         </div>
     </div>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/career.js"></script>
+    <script>
+    // Carousel functionality
+    const slides = document.querySelectorAll('.carousel-img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+    function nextSlide() {
+        let next = (currentIndex + 1) % slides.length;
+        showSlide(next);
+    }
+    function prevSlide() {
+        let prev = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 7000); 
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    showSlide(0);
+    startAutoSlide();
+
+    // Enable drag-to-scroll for gallery
+    const galleryTrack = document.querySelector('.events-gallery-track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    galleryTrack.addEventListener('mousedown', (e) => {
+        isDown = true;
+        galleryTrack.classList.add('active');
+        startX = e.pageX - galleryTrack.offsetLeft;
+        scrollLeft = galleryTrack.scrollLeft;
+    });
+    galleryTrack.addEventListener('mouseleave', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mouseup', () => {
+        isDown = false;
+        galleryTrack.classList.remove('active');
+    });
+    galleryTrack.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - galleryTrack.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed
+        galleryTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    // Next/Prev buttons scroll the gallery left/right
+    const prevGalleryBtn = document.querySelector('.prev-gallery');
+    const nextGalleryBtn = document.querySelector('.next-gallery');
+    prevGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    nextGalleryBtn.addEventListener('click', () => {
+        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    </script>
 </body>
 </html>
