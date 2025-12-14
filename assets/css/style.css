@@ -895,7 +895,7 @@ body { width: 100%; max-width: 100%; overflow-x: hidden; }
 img, iframe, video, embed, object { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 900px) {
-  .transport-section, .transport1-section, .hero-section, .events-carousel-section, .role-section { height: auto !important; }
+  .transport-section, .transport1-section, .hero-section, .role-section { height: auto !important; }
   .transport-flex, .transport1-flex, .role-flex { height: auto !important; }
   .transport-video-col, .transport-content-col, .transport1-content-col, .transport1-image-col { height: auto !important; min-height: 220px; }
 }
