@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <style> .menu-btn { position: fixed; z-index: 9999 !important; background: none; border: none; cursor: pointer; padding: 0; } </style>
+        <!-- Page styles moved to assets/css/style.css -->
 </head>
-<body>
+<body class="page-transport">
     <!-- Sticky Mother Header -->
     <div class="mother-header">
         <div class="container">
@@ -126,7 +126,7 @@
     </section>
     <section id="location" class="map-section">
         <div class="map-frame-fullwidth">
-            <div id="customMapTransport" style="width:100%;height:600px;"></div>
+            <div id="customMapTransport"></div>
             <div id="mapLowerLeftTextTransport" style="position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,0.8);padding:6px 12px;border-radius:6px;font-weight:600;z-index:400;">PCL Parañaque Location</div>
         </div>
     </section>
