@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="page-careers">
     <!-- Sticky Mother Header -->
-    <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
+    <iframe src="mother-header.html" class="mother-iframe" scrolling="no" allowtransparency="true"></iframe>
 
     <!-- Hero Section -->
     <section id="home" class="events-carousel-section">
@@ -37,7 +37,7 @@
     <!-- Events Hero Section with Horizontal Card Layout -->
     <section id="home" class="role-section">
         <div class="role-flex">
-            <div class="role" style="background-color: black; font-weight: 500;">
+            <div class="role">
                 <div class="role-item active" onclick="selectRole(0)">
                     <h3>Software Engineer</h3>
                     <p>Head Office</p>
@@ -142,45 +142,21 @@
         stopAutoSlide();
         startAutoSlide();
     });
-    showSlide(0);
-    startAutoSlide();
 
-    // Enable drag-to-scroll for gallery
+    // Guarded gallery controls (only attach if elements exist)
     const galleryTrack = document.querySelector('.events-gallery-track');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    galleryTrack.addEventListener('mousedown', (e) => {
-        isDown = true;
-        galleryTrack.classList.add('active');
-        startX = e.pageX - galleryTrack.offsetLeft;
-        scrollLeft = galleryTrack.scrollLeft;
-    });
-    galleryTrack.addEventListener('mouseleave', () => {
-        isDown = false;
-        galleryTrack.classList.remove('active');
-    });
-    galleryTrack.addEventListener('mouseup', () => {
-        isDown = false;
-        galleryTrack.classList.remove('active');
-    });
-    galleryTrack.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - galleryTrack.offsetLeft;
-        const walk = (x - startX) * 1.5; // scroll speed
-        galleryTrack.scrollLeft = scrollLeft - walk;
-    });
-
-    // Next/Prev buttons scroll the gallery left/right
     const prevGalleryBtn = document.querySelector('.prev-gallery');
     const nextGalleryBtn = document.querySelector('.next-gallery');
-    prevGalleryBtn.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-    nextGalleryBtn.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
-    });
+    if (prevGalleryBtn && galleryTrack) {
+        prevGalleryBtn.addEventListener('click', () => {
+            galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+    }
+    if (nextGalleryBtn && galleryTrack) {
+        nextGalleryBtn.addEventListener('click', () => {
+            galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+    }
 
     </script>
 </body>
