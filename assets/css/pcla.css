@@ -113,28 +113,43 @@ body {
 /* PCL Exam Section (company-section1 replacement) */
 .pcl-exam-section {
     width: 100%;
-    min-height: 420px;
+    min-height: 320px;
     position: relative;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .pcl-exam-bg {
     width: 100%;
-    min-height: 920px;
+    min-height: 520px;
     background: url('../img/pcla/main3.png') center center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+.pcl-exam-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: inherit;
+    filter: blur(4px);
+    z-index: 1;
+    background: url('../img/pcla/main3.png') center center/cover no-repeat;
 }
 .pcl-exam-card {
-    background: rgba(128, 0, 0, 0.85);
+    background: rgba(128, 0, 0, 0.656);
     border-radius: 18px;
-    padding: 38px 32px 28px 32px;
+    padding: 28px 16px 18px 16px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     text-align: center;
-    max-width: 420px;
-    width: 90%;
+    max-width: 480px;
+    max-height: 100%;
+    width: 95%;
     color: #fff;
     position: relative;
     z-index: 2;
@@ -142,57 +157,68 @@ body {
 .pcl-exam-card h2 {
     font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 .pcl-exam-card p {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 .pcl-exam-btn {
     background: #fff;
     color: #800000;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 22px;
-    padding: 8px 28px;
+    padding: 7px 18px;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     transition: background 0.2s, color 0.2s;
+    margin-bottom: 10px;
 }
 .pcl-exam-btn:hover {
     background: #800000;
     color: #fff;
 }
 @media (max-width: 900px) {
+    .pcl-exam-bg {
+        min-height: 220px;
+    }
     .pcl-exam-card {
-        max-width: 95vw;
-        padding: 28px 10px 18px 10px;
+        max-width: 98vw;
+        padding: 18px 6vw 12px 6vw;
     }
     .pcl-exam-card h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .pcl-exam-card p {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
 }
 @media (max-width: 600px) {
+    .pcl-exam-section {
+        min-height: 120px;
+    }
     .pcl-exam-bg {
-        min-height: 320px;
+        min-height: 120px;
+        padding: 0;
     }
     .pcl-exam-card {
-        padding: 18px 4vw 12px 4vw;
+        padding: 10px 4vw 8px 4vw;
+        max-width: 99vw;
+        margin: 40px 60px 40px 60px;
     }
     .pcl-exam-card h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .pcl-exam-card p {
-        font-size: 0.95rem;
+        font-size: 0.80rem;
     }
     .pcl-exam-btn {
-        font-size: 0.95rem;
-        padding: 7px 18px;
+        font-size: 0.92rem;
+        padding: 8px 70px;
+        margin-bottom: 10px;
     }
 }
 
@@ -260,10 +286,15 @@ body {
     margin-bottom: 10px;
 }
 
-@media (max-width: 900px) {
+/* Responsive for pcl-academy-section */
+@media (max-width: 1100px) {
     .pcl-academy-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+    .pcl-academy-img {
+        max-width: 180px;
+        height: 110px;
     }
     .pcl-academy-header {
         font-size: 1.5rem;
@@ -272,23 +303,42 @@ body {
         font-size: 1.3rem;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .pcl-academy-section {
         padding: 30px 0 10px 0;
     }
     .pcl-academy-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
     }
     .pcl-academy-img {
         max-width: 100%;
-        height: 120px;
+        height: 90px;
     }
     .pcl-academy-header {
         font-size: 1.1rem;
     }
     .pcl-academy-script {
+        font-size: 1.5rem;
+    }
+    .pcl-academy-desc, .pcl-academy-footer {
+        font-size: 0.80rem;
+        padding: 0px 5px 0px 5px;
+    }
+    .pcl-academy-label {
         font-size: 1rem;
+    }
+    .pcl-academy-section .container {
+        padding: 0 8px;
+    }
+}
+@media (max-width: 480px) {
+    .pcl-academy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .pcl-academy-img {
+        height: 70px;
     }
 }
 
@@ -586,6 +636,32 @@ body {
         margin-bottom: 20px;
         word-break: break-word;
     }
+
+    .pcla-hero-section {
+        min-height: 400px;
+        height: auto;
+        background-position: center;
+        padding-top: 30px;
+        align-items: flex-start;
+    }
+    .pcla-hero-content {
+        padding: 0 8px;
+    }
+    .pcla-hero-content h1 {
+        font-size: 2.2rem;
+        padding: 60px 0 10px 0;
+        text-align: center;
+    }
+    .pcla-hero-content p {
+        font-size: 1.1rem;
+        padding: 0 0 10px 0;
+        text-align: center;
+    }
+    .cta-button {
+        margin-top: 60px;
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -634,5 +710,32 @@ body {
         margin-top: 10px;
         margin-bottom: 80px;
         word-break: break-word;
+    }
+
+    .pcla-hero-section {
+        min-height: 200px;
+        height: auto;
+        background-position: right;
+        padding-top: 10px;
+    }
+    .pcla-hero-content {
+        padding: 0 4px;
+    }
+    .pcla-hero-content h1 {
+        font-size: 1.3rem;
+        padding: 30px 0 5px 0;
+        text-align: center;
+        line-height: 1.2;
+    }
+    .pcla-hero-content p {
+        font-size: 0.95rem;
+        padding: 0 0 8px 0;
+        text-align: center;
+        line-height: 1.4;
+    }
+    .cta-button {
+        margin-top: 30px;
+        font-size: 0.95rem;
+        padding: 8px 12px;
     }
 }
