@@ -31,7 +31,7 @@
         <div class="transport-flex">
             <div class="transport-video-col">
                 <video class="transport-video" autoplay muted loop>
-                    <source src="assets/vid/video.mp4" type="video/mp4">
+                    <source src="assets/vid/transvid.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -43,7 +43,7 @@
                         <p style="font-size: 1.3rem;">With these strengths, PCL continues to enhance its capabilities, ensuring that every unit is maintained to the highest standards of safety and reliability. The establishment of this garage not only reflects PCL’s growth but also reinforces its commitment to delivering efficient and dependable logistics solutions.</p>
                         <div class="stats">
                             <div class="stat-item">
-                                <h3>5,000+</h3>
+                                <h3>4,000+</h3>
                                 <p>Trips Monthly</p>
                             </div>
                             <div class="stat-item">
@@ -83,42 +83,27 @@
     </section>
     <section id="services" class="services-section">
         <div class="container">
-            <h2>Our Services</h2>            
+            <h2>Our Trucks</h2>            
             <div class="services-grid">
-                <div class="service-card" style="background-image: url('assets/img/services/warehouse.png');">
+                <div class="service-card">
+                    <img src="assets/img/transport/t1.png" alt="Warehouse Management Services" class="service-card-img">
                     <div class="service-content">
                         <h3>Warehouse Management Services</h3>
                         <p>Comprehensive warehouse management solutions including inventory control, order fulfillment, and distribution management with real-time tracking systems.</p>
                     </div>
                 </div>
-                <div class="service-card" style="background-image: url('assets/img/services/buildtosuit.png');">
+                <div class="service-card">
+                    <img src="assets/img/services/buildtosuit.png" alt="Build to Suit Warehouse Facilities" class="service-card-img">
                     <div class="service-content">
                         <h3>Build to Suit Warehouse Facilities</h3>
                         <p>Custom-designed warehouse facilities tailored to your specific business needs with modern infrastructure and strategic locations.</p>
                     </div>
                 </div>
-                <div class="service-card" style="background-image: url('assets/img/services/factory.png');">
+                <div class="service-card">
+                    <img src="assets/img/transport/t3.png" alt="Factory Assistance" class="service-card-img">
                     <div class="service-content">
                         <h3>Factory Assistance</h3>
                         <p>Complete factory support services including production assistance, quality control, and operational optimization to enhance manufacturing efficiency.</p>
-                    </div>
-                </div>
-                <div class="service-card" style="background-image: url('assets/img/services/transport.jpg');">
-                    <div class="service-content">
-                        <h3>Transport Services</h3>
-                        <p>Reliable transportation solutions covering local and long-distance delivery with fleet management and route optimization for maximum efficiency.</p>
-                    </div>
-                </div>
-                <div class="service-card" style="background-image: url('assets/img/services/energy.png');">
-                    <div class="service-content">
-                        <h3>Energy Monitoring</h3>
-                        <p>Advanced energy monitoring and management systems to optimize power consumption, reduce costs, and improve sustainability across all operations.</p>
-                    </div>
-                </div>
-                <div class="service-card" style="background-image: url('assets/img/services/values.jpg');">
-                    <div class="service-content">
-                        <h3>Value Added Services</h3>
-                        <p>Additional specialized services including packaging, labeling, quality inspection, and customized solutions to meet unique client requirements.</p>
                     </div>
                 </div>
             </div>
@@ -172,9 +157,9 @@
     const marker = L.marker(transportLocation.coords, { icon: maroonIcon }).addTo(mapTransport);
     marker.bindPopup(`
         <div style='text-align:center; margin: -14px -26px -5px -22px;'>
-            <img src='${transportLocation.img}' alt='${transportLocation.name}' style='width:140px; border-radius:8px; margin-bottom:2px;'>
-            <h3 style='margin-top: 5px;'>${transportLocation.name}</h3>
-            <p style='font-size:1rem; margin: 1px 0 -1px 0;'>${transportLocation.address}</p>
+            <img src='assets/img/map/banner.png' alt='${transportLocation.name}' style='width:140px; border-radius:8px; margin-bottom:2px;'>
+            <h3 style='margin-top: 5px;'>Banner</h3>
+            <p style='font-size:1rem; margin: 1px 0 -1px 0;'>Contact</p>
         </div>
     `);
     marker.on('mouseover', function(e) {
