@@ -6,6 +6,7 @@
     <title>PCL - Producers Connection Logistics Inc.</title>
     <link rel="icon" type="image/png" href="assets/img/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/carousel.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -64,49 +65,62 @@
             </div>
         <div class="transport-overlay"></div>
     </section>
-    <!-- About Us Section -->
-    <section id="home" class="transport1-section">
-        <div class="transport1-flex">
-            <div class="transport1-content-col">
-                <div class="transport-content">
-                    <div class="transport1-text">
-                        <h2>About PCL</h2>
-                        <p style="font-size: 1.3rem;">Being in the industry for more than 2 decades, Producers Connections Logistics Incorporated has been consistent in developing a strong relationship with its customer and business partners.</p>
-                        <p style="font-size: 1.3rem;">PCL has been the preferred choice to several companies operating it the company in terms of product handling, distribution, transportation, warehousing, and other logistics- related services.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="transport1-image-col">
-                <img class="transport1-image" src="assets/img/trans_img.png" alt="About PCL">
-            </div>
-        <div class="transport1-overlay"></div>
-    </section>
-    <section id="services" class="services-section">
+    <section id="trucks" class="trucks-section">
         <div class="container">
             <h2>Our Trucks</h2>            
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="assets/img/transport/t1.png" alt="Warehouse Management Services" class="service-card-img">
-                    <div class="service-content">
-                        <h3>Warehouse Management Services</h3>
-                        <p>Comprehensive warehouse management solutions including inventory control, order fulfillment, and distribution management with real-time tracking systems.</p>
+            <div class="gallery-container">
+                <div class="gallery-wrapper">
+                    <div class="card" data-year="4 Wheels" data-label="Truck Type">
+                        <div class="card-year">4 Wheels</div>
+                        <img src="assets/img/transport/t1.png" alt="Truck Type 2024">
+                        <div class="card-label">Truck Type</div>
+                    </div>
+                    <div class="card" data-year="4 Wheels" data-label="Truck Type">
+                        <div class="card-year">4 Wheels</div>
+                        <img src="assets/img/transport/t3.png" alt="Truck Type 2024">
+                        <div class="card-label">Truck Type</div>
+                    </div>
+                    <div class="card" data-year="6 Wheels" data-label="Truck Type">
+                        <div class="card-year">6 Wheels</div>
+                        <img src="assets/img/transport/t1.png" alt="Truck Type">
+                        <div class="card-label">Truck Type</div>
+                    </div>
+                    <div class="card" data-year="" data-label="PCL Giving">
+                        <img src="assets/img/transport/main.png" alt="PCL Giving">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
+                            <div style="color: white; font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);"></div>
+                        </div>
+                    </div>
+                    <div class="card" data-year="6 Wheels" data-label="Truck Type">
+                        <div class="card-year">6 Wheels</div>
+                        <img src="assets/img/transport/t3.png" alt="Truck Type">
+                        <div class="card-label">Truck Type</div>
+                    </div>
+                    <div class="card" data-year="10 Wheels" data-label="Truck Type">
+                        <div class="card-year">10 Wheels</div>
+                        <img src="assets/img/transport/t1.png" alt="Truck Type">
+                        <div class="card-label">Truck Type</div>
+                    </div>
+                    <div class="card" data-year="10 Wheels" data-label="Truck Type">
+                        <div class="card-year">10 Wheels</div>
+                        <img src="assets/img/transport/t3.png" alt="Truck Type">
+                        <div class="card-label">Truck Type</div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <img src="assets/img/services/buildtosuit.png" alt="Build to Suit Warehouse Facilities" class="service-card-img">
-                    <div class="service-content">
-                        <h3>Build to Suit Warehouse Facilities</h3>
-                        <p>Custom-designed warehouse facilities tailored to your specific business needs with modern infrastructure and strategic locations.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="assets/img/transport/t3.png" alt="Factory Assistance" class="service-card-img">
-                    <div class="service-content">
-                        <h3>Factory Assistance</h3>
-                        <p>Complete factory support services including production assistance, quality control, and operational optimization to enhance manufacturing efficiency.</p>
-                    </div>
-                </div>
+                <button class="nav-btn prev" aria-label="Previous">←</button>
+                <button class="nav-btn next" aria-label="Next">→</button>
             </div>
+
+            <div class="modal" id="imageModal">
+                <button class="modal-close" id="closeModal">×</button>
+                <div class="modal-content">
+                    <img id="modalImage" src="" alt="">
+                    <div class="modal-info" id="modalInfo">
+                        <span class="modal-year" id="modalYear"></span>
+                        <span class="modal-label" id="modalLabel"></span>
+                    </div>
+                </div>
+            </div><br>
         </div>
     </section>
     <section id="location" class="map-section">
@@ -135,6 +149,7 @@
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/carousel_trans.js"></script>
     <script>
     const transportLocation = {
         name: 'Km 19 W Service Rd, Parañaque, Metro Manila',
