@@ -102,6 +102,15 @@ Best regards`
     window.selectRole = selectRole;
     window.applyForJob = applyForJob;
     document.addEventListener('DOMContentLoaded', function() {
-        updateRoleDetails(0);
+        // Defensive: check if roleDetails exists
+        if (document.getElementById('roleDetails')) {
+            updateRoleDetails(0);
+        } else {
+            console.error('roleDetails element not found!');
+        }
+        // Defensive: check if .role-item exists
+        if (!document.querySelector('.role-item')) {
+            console.error('No .role-item elements found!');
+        }
     });
 })();
