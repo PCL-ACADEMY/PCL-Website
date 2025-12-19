@@ -39,36 +39,40 @@ const jobRoles = [
 
 let currentRoleIndex = 0;
 
-function selectRole(index) {
-    currentRoleIndex = index;
-    const items = document.querySelectorAll('.role-item');
-    items.forEach((item, i) => {
-        if (i === index) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
+function renderRoles() {
+    const roleList = document.querySelector('.role');
+    if (!roleList) return;
+    roleList.innerHTML = '';
+    jobRoles.forEach((role, idx) => {
+        const div = document.createElement('div');
+        div.className = 'role-item' + (idx === 0 ? ' active' : '');
+        div.setAttribute('data-index', idx);
+        div.innerHTML = `<h3>${role.title}</h3><p>${role.location}</p>`;
+        roleList.appendChild(div);
     });
-    updateRoleDetails(index);
 }
 
-function updateRoleDetails(index) {
+function renderRoleDetails(index) {
     const role = jobRoles[index];
     const detailsContainer = document.getElementById('roleDetails');
-    
+    if (!detailsContainer) return;
     let qualificationsHTML = '';
     role.qualifications.forEach(qual => {
         qualificationsHTML += `<li>${qual}</li>`;
     });
-
     detailsContainer.innerHTML = `
         <h1>${role.title}</h1>
         <h2 style="padding-bottom: 8px;">Qualification</h2>
         <ul style="display: flex; flex-direction: column; gap: 4px;">
             ${qualificationsHTML}
         </ul>
-        <button class="apply-btn" onclick="applyForJob()">APPLY NOW</button>
+        <button class="apply-btn" id="applyBtn">APPLY NOW</button>
     `;
+    // Add event listener for apply button
+    const applyBtn = document.getElementById('applyBtn');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', applyForJob);
+    }
 }
 
 function applyForJob() {
@@ -94,21 +98,22 @@ function applyForJob() {
     }
 }
 
-// Make functions globally accessible and ensure DOM is loaded before initializing
-(function() {
-    window.jobRoles = jobRoles;
-    window.selectRole = selectRole;
-    window.applyForJob = applyForJob;
-    document.addEventListener('DOMContentLoaded', function() {
-        // Defensive: check if roleDetails exists
-        if (document.getElementById('roleDetails')) {
-            updateRoleDetails(0);
-        } else {
-            console.error('roleDetails element not found!');
-        }
-        // Defensive: check if .role-item exists
-        if (!document.querySelector('.role-item')) {
-            console.error('No .role-item elements found!');
-        }
-    });
-})();
+document.addEventListener('DOMContentLoaded', function() {
+    renderRoles();
+    renderRoleDetails(0);
+    // Event delegation for role selection
+    const roleList = document.querySelector('.role');
+    if (roleList) {
+        roleList.addEventListener('click', function(e) {
+            const item = e.target.closest('.role-item');
+            if (!item) return;
+            const idx = parseInt(item.getAttribute('data-index'));
+            if (isNaN(idx)) return;
+            // Remove active from all
+            document.querySelectorAll('.role-item').forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            currentRoleIndex = idx;
+            renderRoleDetails(idx);
+        });
+    }
+});
