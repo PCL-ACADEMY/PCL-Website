@@ -997,4 +997,55 @@ img, iframe, video, embed, object { max-width: 100%; height: auto; display: bloc
 
 /* Small helpers moved from inline attributes in careers.html */
 .page-careers iframe.mother-iframe { margin-bottom: -10px; width: 100%; height: 38px; border: none; z-index: 10000; position: sticky; top: 0; display: block; }
-.page-careers .role { background-color: black; font-weight: 500; }
+
+/* === FONT STYLES: Only Normal, Bold, Italic, with Webkit for cross-browser === */
+body, html {
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bold, b, strong {
+  font-weight: bold !important;
+  font-style: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.italic, em, i {
+  font-style: italic !important;
+  font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="font-"] {
+  font-style: normal !important;
+  font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove/override any other font-style/font-weight rules */
+[class*="font-"] {
+  font-style: normal !important;
+  font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === GLOBAL WEBKIT & FONT SMOOTHING FOR CROSS-BROWSER === */
+html, body, * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: none;
+}
