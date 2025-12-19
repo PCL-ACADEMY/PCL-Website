@@ -82,70 +82,74 @@
 <script src="assets/js/script.js"></script>
 <script src="assets/js/career.js"></script>
     <script>
-    // Carousel functionality
-    const slides = document.querySelectorAll('.carousel-img');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
-    let autoSlide;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Carousel functionality
+        const slides = document.querySelectorAll('.carousel-img');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentIndex = 0;
+        let autoSlide;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+        function nextSlide() {
+            let next = (currentIndex + 1) % slides.length;
+            showSlide(next);
+        }
+        function prevSlide() {
+            let prev = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+        function startAutoSlide() {
+            autoSlide = setInterval(nextSlide, 7000); 
+        }
+        function stopAutoSlide() {
+            clearInterval(autoSlide);
+        }
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+            dot.addEventListener('click', () => {
+                showSlide(i);
+                stopAutoSlide();
+                startAutoSlide();
+            });
         });
-        currentIndex = index;
-    }
-    function nextSlide() {
-        let next = (currentIndex + 1) % slides.length;
-        showSlide(next);
-    }
-    function prevSlide() {
-        let prev = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(prev);
-    }
-    function startAutoSlide() {
-        autoSlide = setInterval(nextSlide, 7000); 
-    }
-    function stopAutoSlide() {
-        clearInterval(autoSlide);
-    }
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-            showSlide(i);
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
             stopAutoSlide();
             startAutoSlide();
         });
-    });
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        stopAutoSlide();
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        // Guarded gallery controls (only attach if elements exist)
+        const galleryTrack = document.querySelector('.events-gallery-track');
+        const prevGalleryBtn = document.querySelector('.prev-gallery');
+        const nextGalleryBtn = document.querySelector('.next-gallery');
+        if (prevGalleryBtn && galleryTrack) {
+            prevGalleryBtn.addEventListener('click', () => {
+                galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
+            });
+        }
+        if (nextGalleryBtn && galleryTrack) {
+            nextGalleryBtn.addEventListener('click', () => {
+                galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
+            });
+        }
+
+        // Start carousel auto-slide
         startAutoSlide();
     });
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
-    });
-
-    // Guarded gallery controls (only attach if elements exist)
-    const galleryTrack = document.querySelector('.events-gallery-track');
-    const prevGalleryBtn = document.querySelector('.prev-gallery');
-    const nextGalleryBtn = document.querySelector('.next-gallery');
-    if (prevGalleryBtn && galleryTrack) {
-        prevGalleryBtn.addEventListener('click', () => {
-            galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
-        });
-    }
-    if (nextGalleryBtn && galleryTrack) {
-        nextGalleryBtn.addEventListener('click', () => {
-            galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
-        });
-    }
-
     </script>
 </body>
 </html>
