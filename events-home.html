@@ -44,8 +44,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             cursor: pointer;
+            border: none;
+        }
+
+        .main-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: auto;
+        }
+
+        .video-click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            cursor: pointer;
+            background: transparent;
         }
 
         .video-overlay {
@@ -308,9 +326,15 @@
             position: relative;
         }
 
-        .modal video {
+        .modal #modalVideo {
             width: 100%;
-            height: auto;
+            min-height: 600px;
+        }
+
+        .modal #modalVideo iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
         }
 
         .modal-close {
@@ -597,9 +621,13 @@
 <body>
     <div class="container">
         <div class="video-section">
-            <video id="mainVideo" class="main-video" loop autoplay muted>
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-            </video>
+            <div id="mainVideo" class="main-video">
+                <iframe src="https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=70650911-1eee-41bb-bef8-044fb825de13&embed=%7B%22af%22%3Atrue%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" 
+                        width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            </div>
+            
+            <!-- Clickable overlay to open modal -->
+            <div class="video-click-overlay" id="videoClickOverlay"></div>
             
             <div class="video-overlay"></div>
             
@@ -636,7 +664,7 @@
         <div class="thumbnails-section">
             <div class="thumbnails-container" id="thumbnailsContainer">
                 <div class="thumbnail active" 
-                     data-video="https://pclms365-my.sharepoint.com/:v:/g/personal/pclacademy_pcl_com_ph/IQARCWVw7h67Qb74BE-4Jd4TASlY8dfWxYJ29wLxEtzFFyo?download=1"
+                     data-video="https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=70650911-1eee-41bb-bef8-044fb825de13&embed=%7B%22af%22%3Atrue%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
                      data-title="20 years Milestone "
                      data-description="Over the past 20 years, Producers Connection Logistics has achieved key milestones that strengthened its operations and industry presence. Through continuous improvements in services, infrastructure, and partnerships, the company has built a strong foundation for sustainable growth. These accomplishments reflect consistent progress, reliability, and long-term commitment to excellence."
                      data-year="2004"
@@ -648,9 +676,9 @@
                 </div>
 
                 <div class="thumbnail" 
-                     data-video="https://pclms365-my.sharepoint.com/:v:/g/personal/pclacademy_pcl_com_ph/IQCaAcotJBQRRb7FsqmEnB2TAYimmXY7hq2c_WiG-TDp4n4?download=1"
+                     data-video="https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=2dca019a-1424-4511-bec5-b2a9849c1d93&embed=%7B%22af%22%3Atrue%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
                      data-title="20th Anniversary"
-                     data-description="As the years progress, this milestone celebrates the journey and growth of Producers Connection Logistics. This video captures the joy of the company’s 20th anniversary, honoring two decades of achievements, shared memories, and the people who made this success possible."
+                     data-description="As the years progress, this milestone celebrates the journey and growth of Producers Connection Logistics. This video captures the joy of the company's 20th anniversary, honoring two decades of achievements, shared memories, and the people who made this success possible."
                      data-year="February"
                      data-genre="07,"
                      data-type="2025"
@@ -660,9 +688,9 @@
                 </div>
                  
                 <div class="thumbnail" 
-                     data-video="https://pclms365-my.sharepoint.com/:v:/g/personal/pclacademy_pcl_com_ph/IQBakWB4DOB_QZ-0dxE-WCF-AUnYsV0SqqKDEYPa51eIn2Q?download=1"
+                     data-video="https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=7860915a-e00c-417f-9fb4-77113e58217e&embed=%7B%22af%22%3Atrue%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
                      data-title="Lip Sync Battle Entry (Triumphus)"
-                     data-description="This video features the performance presented by Triumphus during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-description="This video features the performance presented by Triumphus during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program's entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
                      data-year="February"
                      data-genre="07,"
                      data-type="2025"
@@ -672,9 +700,9 @@
                 </div>
                 
                 <div class="thumbnail" 
-                     data-video="https://pclms365-my.sharepoint.com/:v:/g/personal/pclacademy_pcl_com_ph/IQCxaHv7pKeyRot75A3u9-gjAa-q61AqTe8GZVBmPEy54vs?download=1"
+                     data-video="https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=fb7b68b1-a7a4-46b2-8b7b-e40deef7e823&embed=%7B%22af%22%3Atrue%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
                      data-title="Lip Sync Battle Entry (Marilao)"
-                     data-description="This video features the performance presented by Marilao during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-description="This video features the performance presented by Marilao during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program's entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
                      data-year="February"
                      data-genre="07,"
                      data-type="2025"
@@ -689,16 +717,14 @@
     <div class="modal" id="videoModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">✕</button>
-            <video id="modalVideo" controls loop>
-                <source src="" type="video/mp4">
-            </video>
+            <div id="modalVideo"></div>
         </div>
     </div>
 
     <script>
         const mainVideo = document.getElementById('mainVideo');
+        const videoClickOverlay = document.getElementById('videoClickOverlay');
         const soundToggle = document.getElementById('soundToggle');
-        const soundIcon = document.getElementById('soundIcon');
         const thumbnails = document.querySelectorAll('.thumbnail');
         const modal = document.getElementById('videoModal');
         const modalVideo = document.getElementById('modalVideo');
@@ -713,15 +739,9 @@
         const logoText = document.getElementById('logoText');
         const taglineText = document.getElementById('taglineText');
         const badgeText = document.getElementById('badgeText');
-        
-        let isMuted = true;
 
-        soundToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            isMuted = !isMuted;
-            mainVideo.muted = isMuted;
-            soundIcon.textContent = isMuted ? '🔇' : '🔊';
-        });
+        // Hide sound toggle since we're using iframe embed
+        soundToggle.style.display = 'none';
 
         function updateVideoInfo(thumbnail) {
             const logoLabel = thumbnail.getAttribute('data-logo') || '';
@@ -760,38 +780,43 @@
                 
                 updateVideoInfo(thumbnail);
                 
-                mainVideo.src = videoSrc;
-                mainVideo.muted = isMuted;
-                mainVideo.play();
+                // Update iframe src with autoplay and loop
+                mainVideo.innerHTML = `<iframe src="${videoSrc}" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
             });
         });
 
-        mainVideo.addEventListener('click', () => {
-            modal.classList.add('active');
-            modalVideo.src = mainVideo.src;
-            modalVideo.currentTime = mainVideo.currentTime;
-            modalVideo.muted = false;
-            modalVideo.play();
-            mainVideo.pause();
+        // Click overlay to open modal with sound
+        videoClickOverlay.addEventListener('click', () => {
+            const currentIframe = mainVideo.querySelector('iframe');
+            if (currentIframe) {
+                modal.classList.add('active');
+                
+                // Get current video source
+                const currentSrc = currentIframe.src;
+                
+                // Extract UniqueId from the URL
+                const uniqueIdMatch = currentSrc.match(/UniqueId=([^&]+)/);
+                if (uniqueIdMatch) {
+                    const uniqueId = uniqueIdMatch[1];
+                    
+                    // Create new URL with sound enabled and autoplay
+                    const soundVideoSrc = `https://pclms365-my.sharepoint.com/personal/pclacademy_pcl_com_ph/_layouts/15/embed.aspx?UniqueId=${uniqueId}&embed=%7B%22af%22%3Afalse%2C%22ust%22%3Atrue%2C%22ap%22%3Atrue%2C%22l%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create`;
+                    
+                    modalVideo.innerHTML = `<iframe src="${soundVideoSrc}" width="100%" height="600px" frameborder="0" scrolling="no" allowfullscreen allow="autoplay"></iframe>`;
+                }
+            }
         });
 
         modalClose.addEventListener('click', () => {
             modal.classList.remove('active');
-            modalVideo.pause();
-            mainVideo.play();
+            modalVideo.innerHTML = '';
         });
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
-                modalVideo.pause();
-                mainVideo.play();
+                modalVideo.innerHTML = '';
             }
-        });
-
-        mainVideo.addEventListener('ended', () => {
-            mainVideo.currentTime = 0;
-            mainVideo.play();
         });
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -805,8 +830,6 @@
                 thumbnails.forEach(t => t.classList.remove('active'));
                 firstThumb.classList.add('active');
                 updateVideoInfo(firstThumb);
-                mainVideo.src = firstThumb.getAttribute('data-video') || mainVideo.src;
-                mainVideo.muted = isMuted;
             }
         });
     </script>
