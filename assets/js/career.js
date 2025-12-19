@@ -9,7 +9,7 @@ const jobRoles = [
             "Strong accuracy, attention to detail, and fast typing (35+ WPM preferred)",
             "Proficient in MS Excel (VLOOKUP/INDEX-MATCH, pivot tables an advantage)",
             "Willing to work shifting schedules and in a fast-paced environment"
-        ] 
+        ]
     },
     {
         title: "Inbound/Outbound Checker",
@@ -45,9 +45,12 @@ function renderRoles() {
     roleList.innerHTML = '';
     jobRoles.forEach((role, idx) => {
         const div = document.createElement('div');
-        div.className = 'role-item' + (idx === 0 ? ' active' : '');
+        div.className = 'role-item' + (idx === currentRoleIndex ? ' active' : '');
         div.setAttribute('data-index', idx);
         div.innerHTML = `<h3>${role.title}</h3><p>${role.location}</p>`;
+        div.addEventListener('click', function() {
+            selectRole(idx);
+        });
         roleList.appendChild(div);
     });
 }
@@ -68,52 +71,27 @@ function renderRoleDetails(index) {
         </ul>
         <button class="apply-btn" id="applyBtn">APPLY NOW</button>
     `;
-    // Add event listener for apply button
     const applyBtn = document.getElementById('applyBtn');
     if (applyBtn) {
         applyBtn.addEventListener('click', applyForJob);
     }
 }
 
+function selectRole(index) {
+    currentRoleIndex = index;
+    renderRoles();
+    renderRoleDetails(index);
+}
+
 function applyForJob() {
     const role = jobRoles[currentRoleIndex];
     const email = 'hrrecruitment@pcl.com.ph';
-    const subject = encodeURIComponent(`Application for ${role.title} Position`);
-    const body = encodeURIComponent(
-`Dear Hiring Manager,
-
-    const subject = encodeURIComponent(subjectText);
-    const body = encodeURIComponent(bodyText);
-
-    // Gmail compose URL (opens compose in Gmail web). If user isn't logged in
-    // they'll be prompted to sign in. We open in a new tab and fall back to
-    // mailto: if the popup is blocked.
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${subject}&body=${body}`;
-
-    const newWin = window.open(gmailUrl, '_blank');
-
-    // If popup blocked or window failed to open, fallback to mailto
-    if (!newWin) {
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    }
+    const subject = `Application for ${role.title} Position`;
+    const body = `Dear Hiring Manager,%0D%0A%0D%0AI am writing to express my interest in the ${role.title} position at ${role.location}.%0D%0A%0D%0ARole: ${role.title}%0D%0ALocation: ${role.location}%0D%0A%0D%0AI believe my skills and experience align well with the requirements for this position. I have attached my resume for your review and would welcome the opportunity to discuss how I can contribute to your team.%0D%0A%0D%0AThank you for considering my application.%0D%0A%0D%0ABest regards`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     renderRoles();
-    renderRoleDetails(0);
-    // Event delegation for role selection
-    const roleList = document.querySelector('.role');
-    if (roleList) {
-        roleList.addEventListener('click', function(e) {
-            const item = e.target.closest('.role-item');
-            if (!item) return;
-            const idx = parseInt(item.getAttribute('data-index'));
-            if (isNaN(idx)) return;
-            // Remove active from all
-            document.querySelectorAll('.role-item').forEach(el => el.classList.remove('active'));
-            item.classList.add('active');
-            currentRoleIndex = idx;
-            renderRoleDetails(idx);
-        });
-    }
+    renderRoleDetails(currentRoleIndex);
 });
