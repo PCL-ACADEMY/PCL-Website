@@ -82,18 +82,20 @@ function applyForJob() {
     const body = encodeURIComponent(
 `Dear Hiring Manager,
 
-I am writing to express my interest in the ${role.title} position at ${role.location}.
+    const subject = encodeURIComponent(subjectText);
+    const body = encodeURIComponent(bodyText);
 
-Role: ${role.title}
-Location: ${role.location}
+    // Gmail compose URL (opens compose in Gmail web). If user isn't logged in
+    // they'll be prompted to sign in. We open in a new tab and fall back to
+    // mailto: if the popup is blocked.
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${subject}&body=${body}`;
 
-I believe my skills and experience align well with the requirements for this position. I have attached my resume for your review and would welcome the opportunity to discuss how I can contribute to your team.
+    const newWin = window.open(gmailUrl, '_blank');
 
-Thank you for considering my application.
-
-Best regards`
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    // If popup blocked or window failed to open, fallback to mailto
+    if (!newWin) {
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
