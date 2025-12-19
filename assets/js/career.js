@@ -96,5 +96,12 @@ Best regards`
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
-// Initialize with first role
-updateRoleDetails(0);
+// Make functions globally accessible and ensure DOM is loaded before initializing
+(function() {
+    window.jobRoles = jobRoles;
+    window.selectRole = selectRole;
+    window.applyForJob = applyForJob;
+    document.addEventListener('DOMContentLoaded', function() {
+        updateRoleDetails(0);
+    });
+})();
