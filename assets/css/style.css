@@ -907,7 +907,7 @@ img, iframe, video, embed, object { max-width: 100%; height: auto; display: bloc
 /* Careers page (scoped) */
 .page-careers .role-section { padding: 40px 18px; }
 .page-careers .role-flex { display: flex; gap: 24px; align-items: flex-start; justify-content: center; width: 90%; margin: 0 auto; }
-.page-careers .role { width: 30%; background: #0b0b0b; color: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.22); overflow: auto; }
+.page-careers .role { width: 30%; background: #0b0b0b; color: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.22); overflow-y: auto; max-height: 520px; }
 .page-careers .role-item { background: transparent; padding: 12px; border-radius: 10px; margin-bottom: 10px; cursor: pointer; transition: background 0.18s, transform 0.12s; }
 .page-careers .role-item h3 { margin: 0; font-size: 1.2rem; color: #fff; }
 .page-careers .role-item p { margin: 4px 0 0; font-size: 1.2rem; color: #ccc; }
