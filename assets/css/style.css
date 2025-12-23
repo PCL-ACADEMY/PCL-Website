@@ -28,8 +28,7 @@
 .mother-header .container { display: flex; justify-content: space-between; align-items: center; max-width: 100%; padding: 0 15px; }
 .contact-info span { margin-right: 20px; }
 .contact-info i { margin-right: 5px; color: #FF0000; }
-.social-links { padding-right: 10px; }
-.social-links a { color: #ffffff; text-decoration: none; margin-left: 15px; font-size: 16px; transition: color 0.3s; }
+.social-links a { color: #ffffff; text-decoration: none; margin-left: 12px; font-size: 16px; transition: color 0.3s; }
 .social-links a:hover { color: #FF0000; }
 
 .transport-section { display: flex; align-items: stretch; justify-content: center; height: 100vh; position: relative; overflow: hidden; background: none; }
