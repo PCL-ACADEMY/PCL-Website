@@ -12,63 +12,6 @@ body { margin-top: -4px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-
 .services-academy-img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 12px #0005; }
 
 /* --- Services Hero Banner Styles --- */
-.services-hero-banner {
-    width: 100vw;
-    min-height: 340px;
-    background-size: cover;
-    position: relative;
-    margin-bottom: 0;
-    overflow: hidden;
-}
-.services-hero-overlay {
-    width: 100%;
-    height: 100%;
-    min-height: 920px;
-    background: linear-gradient(90deg, rgba(34,34,34,0.7) 40%, rgba(200,0,0,0.85) 60%, #c00 100%);
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    position: relative;
-}
-.services-hero-content {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    min-height: 840px;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-}
-.services-hero-left {
-    flex: 1;
-    display: flex;
-    align-items: flex-end;
-    padding: 0 0 32px 48px;
-}
-.services-hero-title {
-    color: #fff;
-    font-size: 6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px #0008;
-    -webkit-text-stroke: 1px #000000;
-}
-.services-hero-right {
-    flex: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 48px 0 0;
-}
-.services-hero-main-text {
-    color: #fff;
-    font-size: 6rem;
-    font-weight: 700;
-    text-shadow: 0 2px 8px #0008;
-    line-height: 1.15;
-    text-align: right;
-    -webkit-text-stroke: 3px #000000;
-}
 
 @media (max-width: 900px) {
     .services-academy-grid { display: flex; flex-direction: column-reverse; gap: 18px; }
@@ -76,17 +19,6 @@ body { margin-top: -4px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-
     .services-academy-img { height: 120px; max-width: 100vw; }
     .services-academy-header { font-size: 1.4rem; }
     .services-academy-desc { font-size: 1rem; } 
-    .services-hero-content, .services-hero-overlay, .services-hero-banner {
-        min-height: 180px;
-    }
-    .services-hero-title { font-size: 1.3rem; }
-    .services-hero-main-text { font-size: 1.3rem; }
-    .services-hero-left, .services-hero-right { padding: 0 12px 12px 12px; }
-    .services-hero-title, .services-hero-main-text {
-        color: #fff !important;
-        -webkit-text-stroke: 0px;
-        text-shadow: none;
-    }
 }
 @media (max-width: 600px) {
     .services-academy-section { padding: 18px 0 8px 0; }
@@ -95,15 +27,4 @@ body { margin-top: -4px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-
     .services-academy-img { height: 100px; max-width: 98vw; }
     .services-academy-header { font-size: 1.1rem; }
     .services-academy-desc { font-size: 0.85rem; text-align: justify; }
-    .services-hero-content, .services-hero-overlay, .services-hero-banner {
-        min-height: 110px;
-    }
-    .services-hero-title { font-size: 1rem; }
-    .services-hero-main-text { font-size: 0.95rem; }
-    .services-hero-left, .services-hero-right { padding: 0 6px 6px 6px; }
-    .services-hero-title, .services-hero-main-text {
-        color: #fff !important;
-        -webkit-text-stroke: 0px;
-        text-shadow: none;
-    }
 }
