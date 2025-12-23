@@ -16,20 +16,7 @@
     <!-- Hero Section -->
     <section id="home" class="events-carousel-section">
         <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="assets/img/careers/c1.png" alt="Slide 1" class="carousel-img active">
-                <img src="assets/img/careers/c2.png" alt="Slide 2" class="carousel-img">
-                <img src="assets/img/careers/c3.png" alt="Slide 3" class="carousel-img">
-                <img src="assets/img/careers/c4.png" alt="Slide 4" class="carousel-img">
-                <img src="assets/img/careers/c5.png" alt="Slide 5" class="carousel-img">
-            </div>
-            <button class="carousel-btn prev" aria-label="Previous">❮</button>
-            <button class="carousel-btn next" aria-label="Next">❯</button>
-            <div class="carousel-dots">
-                <span class="carousel-dot active"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-            </div>
+            <img src="assets/img/careers/c1.png" alt="Careers" class="carousel-img active" style="width:100%;height:auto;display:block;">
         </div>
         <div class="hero-overlay"></div>
     </section>
@@ -83,55 +70,6 @@
 <script src="assets/js/career.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Carousel functionality
-        const slides = document.querySelectorAll('.carousel-img');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const prevBtn = document.querySelector('.carousel-btn.prev');
-        const nextBtn = document.querySelector('.carousel-btn.next');
-        let currentIndex = 0;
-        let autoSlide;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentIndex = index;
-        }
-        function nextSlide() {
-            let next = (currentIndex + 1) % slides.length;
-            showSlide(next);
-        }
-        function prevSlide() {
-            let prev = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(prev);
-        }
-        function startAutoSlide() {
-            autoSlide = setInterval(nextSlide, 7000); 
-        }
-        function stopAutoSlide() {
-            clearInterval(autoSlide);
-        }
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                showSlide(i);
-                stopAutoSlide();
-                startAutoSlide();
-            });
-        });
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-
         // Guarded gallery controls (only attach if elements exist)
         const galleryTrack = document.querySelector('.events-gallery-track');
         const prevGalleryBtn = document.querySelector('.prev-gallery');
@@ -146,9 +84,6 @@
                 galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
             });
         }
-
-        // Start carousel auto-slide
-        startAutoSlide();
     });
     </script>
 </body>
