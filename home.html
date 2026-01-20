@@ -49,7 +49,7 @@
             <div style="width: 100vw; box-sizing: border-box;"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px 12px; padding: 0 2vw 0 2vw;">
                 <div class="stat-item">
-                    <h3>94,716</h3>
+                    <h3>95,189</h3>
                     <p>Trip Served</p>
                 </div>
                 <div class="stat-item">
@@ -61,7 +61,7 @@
                     <p>Clients Served</p>
                 </div>
                 <div class="stat-item">
-                    <h3>91</h3>
+                    <h3>11</h3>
                     <p>Warehouse Facilities</p>
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <img src="assets/img/logo.png" alt="Logo">
         </div>
         <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Logistics</span></div>
         <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
         <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
         <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
@@ -152,15 +152,21 @@
         },
         {
             name: 'CAVITE',
-            coords: [14.3251, 120.8816], // Approximate coordinates for General Trias, Cavite
+            coords: [14.3251, 120.8816],
             address: 'Contact',
             img: 'assets/img/map/cavite.jpg'
         },
         {
             name: 'HEAD OFFICE',
-            coords: [14.5822, 120.9836], // Approximate coordinates for Times Plaza, Ermita, Manila
+            coords: [14.5822, 120.9836],
             address: 'Contact',
             img: 'assets/img/map/office.png'
+        },
+        {
+            name: 'PALAWAN',
+            coords: [9.8349, 118.7384],
+            address: 'Contact',
+            img: 'assets/img/map/cms.jpg'
         }
     ];
 
@@ -185,6 +191,7 @@
     const markerCoords = [];
     locations.forEach(loc => {
         markerCoords.push(loc.coords);
+        const gmapUrl = `https://www.google.com/maps?q=${loc.coords[0]},${loc.coords[1]}`;
         const marker = L.marker(loc.coords, { icon: maroonIcon }).addTo(map);
         marker.bindPopup(`
             <div style='text-align:center; margin: -14px -26px -5px -22px;'>
@@ -198,6 +205,9 @@
         });
         marker.on('mouseout', function(e) {
             this.closePopup();
+        });
+        marker.on('click', function(e) {
+            window.open(gmapUrl, '_blank');
         });
     });
 

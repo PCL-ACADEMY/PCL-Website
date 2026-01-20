@@ -18,15 +18,23 @@
     <iframe src="mother-header.html" style="margin-bottom:-10px;width:100%;height:38px;border:none;z-index:10000;position:sticky;top:0;" scrolling="no" allowtransparency="true"></iframe>
 
     <!-- Hero Section -->
-    <section id="home" class="events-carousel-section">
+    <section id="home" class="events-carousel-section" style="height:100vh;">
         <iframe src="events-home.html" style="width:100%;height:100%;border:none;"></iframe>
     </section>
 
     <!-- Events Hero Section with Horizontal Card Layout -->
     <section id="hero" class="events-hero-section">
         <div class="events-gallery-wrapper">
-            <button class="gallery-nav-btn prev-gallery" aria-label="Previous">
-                ❮
+            <button class="gallery-nav-btn prev-gallery" aria-label="Previous" style="display:none;">
+                <svg viewBox="0 0 56 56" width="56" height="56">
+                    <defs>
+                        <filter id="arrowShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.55"/>
+                            <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff002b" flood-opacity="0.45"/>
+                        </filter>
+                    </defs>
+                    <path d="M36 48L20 28L36 8" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#arrowShadow)"/>
+                </svg>
             </button>
             
             <div class="events-gallery-track">
@@ -71,8 +79,16 @@
                 </div>
             </div>
             
-            <button class="gallery-nav-btn next-gallery" aria-label="Next">
-                ❯
+            <button class="gallery-nav-btn next-gallery" aria-label="Next" style="display:none;">
+                <svg viewBox="0 0 56 56" width="56" height="56">
+                    <defs>
+                        <filter id="arrowShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.55"/>
+                            <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff002b" flood-opacity="0.45"/>
+                        </filter>
+                    </defs>
+                    <path d="M20 8L36 28L20 48" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#arrowShadow)"/>
+                </svg>
             </button>
         </div>
         
@@ -80,110 +96,110 @@
             <div class="gallery-container">
                 <div class="gallery-wrapper">
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-21.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/l10.png" alt="d">
+                        <div class="card-label">Tree Planting</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-19.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2022</div>
+                        <img src="assets/img/csr/l9.png" alt="d">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-17.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2022</div>
+                        <img src="assets/img/csr/l8.png" alt="d">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-15.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/l7.png" alt="d">
+                        <div class="card-label">School Donation</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-13.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/l6.png" alt="d">
+                        <div class="card-label">School Donation</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-11.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/l5.png" alt="d">
+                        <div class="card-label">School Donation</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-9.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2022</div>
+                        <img src="assets/img/csr/l4.png" alt="d">
+                        <div class="card-label">Brigada</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-7.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2020</div>
+                        <img src="assets/img/csr/l3.png" alt="d">
+                        <div class="card-label">Brigada</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-5.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2020</div>
+                        <img src="assets/img/csr/l2.png" alt="d">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-3.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2020</div>
+                        <img src="assets/img/csr/l1.png" alt="d">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="" data-label="PCL Giving">
                         <img src="assets/img/csr/main.png" alt="PCL Giving">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
-                            <div style="color: white; font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">PCLGiving</div>
+                            <div style="color: white; font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);"></div>
                         </div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-2.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r1.png" alt="PCL Giving">
+                        <div class="card-label">Tree Planting</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-4.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r2.png" alt="PCL Giving">
+                        <div class="card-label">Tree Planting</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-6.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r3.png" alt="PCL Giving">
+                        <div class="card-label">Tree Planting</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-8.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r4.png" alt="PCL Giving">
+                        <div class="card-label">Tree Planting</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-10.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2018</div>
+                        <img src="assets/img/csr/r5.png" alt="PCL Giving">
+                        <div class="card-label">Blood Donation</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-12.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2023</div>
+                        <img src="assets/img/csr/r6.png" alt="PCL Giving">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-14.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2023</div>
+                        <img src="assets/img/csr/r7.png" alt="PCL Giving">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-16.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2023</div>
+                        <img src="assets/img/csr/r8.png" alt="PCL Giving">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-18.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r9.png" alt="PCL Giving">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                     <div class="card" data-year="YEAR" data-label="Event Title">
-                        <div class="card-year">YEAR</div>
-                        <img src="assets/img/csr/tranding-food-20.png" alt="Event Title">
-                        <div class="card-label">Event Title</div>
+                        <div class="card-year">2024</div>
+                        <img src="assets/img/csr/r10.png" alt="PCL Giving">
+                        <div class="card-label">PCL Giving</div>
                     </div>
                 </div>
                 <button class="nav-btn prev" aria-label="Previous">❮</button>
@@ -224,7 +240,7 @@
                 <img src="assets/img/logo.png" alt="Logo">
             </div>
             <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-            <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+            <div class="assistive-item" data-target="services.html"><span class="assistive-label">Logistics</span></div>
             <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
             <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
             <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
@@ -321,9 +337,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Next/Prev buttons scroll the gallery left/right
+    // Next/Prev buttons scroll the gallery left/right and auto-hide at scroll limits
     const prevGalleryBtn = document.querySelector('.prev-gallery');
     const nextGalleryBtn = document.querySelector('.next-gallery');
+    function updateGalleryArrows() {
+        if (!galleryTrack) return;
+        // Show/hide prev arrow
+        if (galleryTrack.scrollLeft <= 2) {
+            prevGalleryBtn.style.display = 'none';
+        } else {
+            prevGalleryBtn.style.display = 'flex';
+        }
+        // Show/hide next arrow
+        if (galleryTrack.scrollLeft + galleryTrack.clientWidth >= galleryTrack.scrollWidth - 2) {
+            nextGalleryBtn.style.display = 'none';
+        } else {
+            nextGalleryBtn.style.display = 'flex';
+        }
+    }
     if (prevGalleryBtn && nextGalleryBtn && galleryTrack) {
         prevGalleryBtn.addEventListener('click', () => {
             galleryTrack.scrollBy({ left: -320, behavior: 'smooth' });
@@ -331,6 +362,10 @@ document.addEventListener('DOMContentLoaded', function() {
         nextGalleryBtn.addEventListener('click', () => {
             galleryTrack.scrollBy({ left: 320, behavior: 'smooth' });
         });
+        galleryTrack.addEventListener('scroll', updateGalleryArrows);
+        window.addEventListener('resize', updateGalleryArrows);
+        // Initial state
+        setTimeout(updateGalleryArrows, 100);
     }
 
     // Event card modal functionality
@@ -388,6 +423,86 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 </script>
+<style>
+.gallery-nav-btn {
+    background: none !important;
+    color: #000;
+    border: none;
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    z-index: 20;
+    opacity: 1;
+    transition: background 0.3s, opacity 0.3s, box-shadow 0.3s;
+    box-shadow: none;
+    outline: none;
+    animation: heartbeat 1.2s infinite;
+    padding: 0 14px;
+    border-radius: 0;
+}
+.gallery-nav-btn svg {
+    width: 68px;
+    height: 68px;
+    fill: #000;
+    filter: drop-shadow(0 2px 8px #0008) drop-shadow(0 0 18px #ff002b33);
+    transition: fill 0.3s, filter 0.3s;
+}
+.gallery-nav-btn:hover svg {
+    fill: #ff002b;
+    filter: drop-shadow(0 2px 16px #ff002b) drop-shadow(0 0 18px #fff8);
+}
+.gallery-nav-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.08); }
+    20% { transform: scale(0.98); }
+    30% { transform: scale(1.12); }
+    40% { transform: scale(0.96); }
+    50% { transform: scale(1.08); }
+    60% { transform: scale(1); }
+}
+@media (max-width: 768px) {
+    .gallery-nav-btn {
+        width: 54px;
+        height: 54px;
+        font-size: 36px;
+        padding: 0 6px;
+    }
+    .gallery-nav-btn svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Always show gallery nav buttons in events-hero-section */
+.events-hero-section .gallery-nav-btn {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+}
+.events-hero-section .prev-gallery {
+    left: 0;
+}
+.events-hero-section .next-gallery {
+    right: 0;
+}
+.events-gallery-wrapper {
+    position: relative;
+}
+</style>
 <!-- Chat Assistance Button and Modal -->
 <button id="chatAssistBtn" title="Chat Assistance" style="position:fixed;bottom:24px;right:24px;z-index:9999;background:none;border:none;border-radius:50%;width:60px;height:60px;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;padding:0;">
     <img id="chatAssistIcon" src="assets/img/email.png" alt="Chat" style="width:75px;height:75px;position:relative;z-index:2;">

@@ -1,121 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PCL - Welcome</title>
-  <style>
-    /* Responsive index hero styles */
-    html, body {
-      height: 100dvh; /* Use dynamic viewport height for better mobile fit */
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    body {
-      background: #000;
-      width: 100vw;
-      height: 100dvh; /* Use dynamic viewport height */
-      position: relative;
-    }
-    .home-preview {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100dvh; /* Use dynamic viewport height */
-      border: none;
-      z-index: 1;
-      max-width: 100vw;
-      max-height: 100dvh;
-      min-height: 100dvh;
-      min-width: 100vw;
-      object-fit: cover;
-      display: block;
-    }
-    .see-more-btn {
-      position: absolute;
-      bottom: 60px;
-      right: 40px;
-      background: #ff2d2d;
-      color: #fff;
-      border: none;
-      border-radius: 20px;
-      padding: 16px 32px;
-      font-size: 1.2em;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      transition: background 0.2s, transform 0.12s;
-      pointer-events: auto;
-    }
-    .see-more-btn:hover { background: #d91a1a; }
-
-    .elevator {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1000;
-      display: block;
-    }
-    .elevator .half {
-      position: absolute;
-      width: 50vw;
-      height: 100vh;
-      top: 0;
-      background-image: url('assets/img/1.png');
-      background-size: 100vw 100vh;
-      background-repeat: no-repeat;
-      transition: transform 0.8s cubic-bezier(.77,0,.18,1);
-    }
-    .elevator .left { left: 0; border-right: 2px solid #ff2d2d00; transform: translateX(0); background-position: left top; }
-    .elevator .right { right: 0; border-left: 2px solid #ff2d2d00; transform: translateX(0); background-position: right top; }
-    .elevator.active .left { transform: translateX(-100%); }
-    .elevator.active .right { transform: translateX(100%); }
-
-    /* Smaller screens: hide the split animation and let the iframe show the image responsively */
-    @media (max-width: 600px) {
-      .elevator { display: none; }
-      html, body {
-        overflow-y: auto;
-        height: 100dvh;
-      }
-      .home-preview {
-        position: fixed;
-        width: 100vw;
-        height: 100dvh;
-        min-height: 100dvh;
-        min-width: 100vw;
-        max-width: 100vw;
-        max-height: 100dvh;
-      }
-      .see-more-btn { bottom: 40px; right: 16px; padding: 16px 32px; font-size: 1rem; }
-    }
-    @media (max-width: 900px) {
-      .see-more-btn { bottom: 28px; right: 20px; padding: 14px 26px; }
-    }
-    .fade-out {
-      opacity: 0;
-      transition: opacity 0.5s cubic-bezier(.77,0,.18,1);
-    }
-  </style>
+<meta charset="UTF-8">
+<title>PCL - Welcome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { overflow: hidden; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;}
+.elevator-bg { position: fixed; inset: 0; width: 100vw; height: 100vh; background: #111; overflow: hidden; z-index: 10;}
+.elevator-door { position: absolute; top: 0; width: 50vw; height: 100vh; will-change: transform; transform: translate3d(0,0,0); transition: transform 0.85s cubic-bezier(0.77, 0, 0.18, 1);}
+.elevator-door-left { left: 0; background: url('assets/img/index1.png') left center no-repeat #222; background-size: 200% 100%;}
+.elevator-door-right { right: 0; background: url('assets/img/index1.png') right center no-repeat #222; background-size: 200% 100%;}
+.elevator-bg.open .elevator-door-left { transform: translate3d(-100%, 0, 0);}
+.elevator-bg.open .elevator-door-right { transform: translate3d(100%, 0, 0);}
+.elevator-lowerleft-text { position: absolute; left: 4vw; bottom: 16vw; font-size: 1.2rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; z-index: 30; background: linear-gradient(180deg, #7a0c0c 0%, #000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: transform 0.6s ease, opacity 0.4s ease;}
+.elevator-bg.open .elevator-lowerleft-text { transform: translateX(-120%); opacity: 0;}
+.elevator-btn { position: fixed; right: 4vw; bottom: 4vh; width: 110px; height: 44px; border-radius: 24px; background: #8f0000; color: #fff; font-weight: bold; border: none; cursor: pointer; z-index: 20; animation: heartbeat 3s infinite; transition: transform 0.4s ease, opacity 0.3s ease;}
+.elevator-bg.open .elevator-btn { transform: translateX(120%); opacity: 0; pointer-events: none;}
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  20% { transform: scale(1.08); }
+  40% { transform: scale(0.96); }
+  60% { transform: scale(1.04); }
+}
+@media (min-width: 1024px) {
+  .elevator-lowerleft-text { left: 2vw; bottom: 2vw; font-size: 2rem; line-height: 1.15; }
+  .elevator-door-left { background: url('assets/img/index.png') left center no-repeat #222; background-size: 200% 100%; }
+  .elevator-door-right { background: url('assets/img/index.png') right center no-repeat #222; background-size: 200% 100%; }
+}
+</style>
 </head>
 <body>
-  <iframe class="home-preview" src="home.html"></iframe>
-  <button class="see-more-btn" id="seeMoreBtn">SEE MORE</button>
-  <div class="elevator" id="elevatorAnim">
-    <div class="half left"></div>
-    <div class="half right"></div>
+<div class="elevator-bg" id="elevator">
+  <div class="elevator-door elevator-door-left"></div>
+  <div class="elevator-door elevator-door-right"></div>
+  <button class="elevator-btn" id="openBtn">See More</button>
+  <div class="elevator-lowerleft-text">
+    Producers<br>
+    Connection<br>
+    Logistics Inc.
   </div>
-  <script>
-    const btn = document.getElementById('seeMoreBtn');
-    const elevator = document.getElementById('elevatorAnim');
-    btn.addEventListener('click', () => {
-      btn.classList.add('fade-out');
-      document.querySelector('.home-preview').classList.add('fade-out');
-      elevator.classList.add('active');
-      setTimeout(() => {
-        window.location.href = 'home.html';
-      }, 900);
-    });
-  </script>
+</div>
+<script>
+const btn = document.getElementById('openBtn');
+const elevator = document.getElementById('elevator');
+btn.addEventListener('click', () => {
+  requestAnimationFrame(() => {
+    elevator.classList.add('open');
+  });
+  setTimeout(() => {
+    window.location.href = 'home.html';
+  }, 1000);
+});
+</script>
 </body>
 </html>

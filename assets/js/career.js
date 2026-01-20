@@ -1,8 +1,38 @@
 const jobRoles = [
+    // TRIUMPHUS
+    {
+        title: "Driver",
+        location: "Sucat, Parañaque",
+        qualifications: [
+            "At least High School graduate or equivalent.",
+            "Valid Professional Driver’s License (Restriction codes as required).",
+            "With at least 1–2 years of delivery or commercial driving experience.",
+            "Familiar with local routes and road networks.",
+            "Knowledge of basic vehicle troubleshooting and preventive maintenance.",
+            "Physically fit and able to assist in loading and unloading when needed.",
+            "Good communication skills and customer-service oriented.",
+            "Willing to work flexible hours, including overtime if required.",
+            "No record of major traffic violations (preferred)."
+
+        ]
+    },
+    {
+        title: "Helper",
+        location: "Sucat, Parañaque",
+        qualifications: [
+            "At least High School graduate or vocational course completion.",
+            "Physically fit and able to lift heavy items.",
+            "With basic knowledge of safety practices and proper handling of goods.",
+            "Can work well with a team and follow instructions.",
+            "Honest, reliable, and hardworking.",
+            "With experience as a delivery helper or warehouse assistant is an advantage but not required."
+        ]
+    },
+
     // CANLUBANG
     {
         title: "Inbound/Outbound Checker",
-        location: "Canlubang",
+        location: "Canlubang, Laguna",
         qualifications: [
             "Senior High or vocational graduate; college level a plus",
             "1+ year experience in warehouse operations (receiving/dispatch)",
@@ -15,9 +45,9 @@ const jobRoles = [
     },
 
     // CAVITE
-    {
+    { 
         title: "Forklift Operator",
-        location: "Cavite",
+        location: "General Trias, Cavite",
         qualifications: [
             "High school graduate; 1–2 years forklift experience (counterbalance or reach truck)",
             "Valid NC II (Forklift Operations) or company-recognized certification",
@@ -28,7 +58,7 @@ const jobRoles = [
     },
     {
         title: "Inventory Control Assistant",
-        location: "Cavite",
+        location: "General Trias, Cavite",
         qualifications: [
             "Graduate of Business, Accounting, Supply Chain, or related field",
             "1–2 years experience in inventory control or warehouse administration",
@@ -40,7 +70,7 @@ const jobRoles = [
     },
     {
         title: "Supervisor",
-        location: "Cavite",
+        location: "General Trias, Cavite",
         qualifications: [
             "Graduate of Industrial Engineering, Supply Chain, Business, or related field",
             "3–5 years warehouse/production experience with 1–2 years supervisory role",
@@ -54,7 +84,7 @@ const jobRoles = [
     // DANAO
     {
         title: "Encoder / SAP",
-        location: "Danao",
+        location: "Danao, Cebu",
         qualifications: [
             "Graduate of any business, supply chain, or IT-related course (or 2 years college/vocational with strong experience)",
             "1–2 years experience in data encoding, warehouse/commissary operations, or logistics",
@@ -66,7 +96,7 @@ const jobRoles = [
     },
     {
         title: "Forklift Operator",
-        location: "Danao",
+        location: "Danao, Cebu",
         qualifications: [
             "High school graduate; 1–2 years forklift experience (counterbalance or reach truck)",
             "Valid NC II (Forklift Operations) or company-recognized certification",
@@ -78,7 +108,7 @@ const jobRoles = [
     },
     {
         title: "Inventory Control Assistant",
-        location: "Danao",
+        location: "Danao, Cebu",
         qualifications: [
             "Graduate of Business, Accounting, Supply Chain, or related field",
             "1–2 years experience in inventory control or warehouse administration",
@@ -91,7 +121,7 @@ const jobRoles = [
     },
     {
         title: "Inventory Control Assistant",
-        location: "Danao",
+        location: "Danao, Cebu",
         qualifications: [
             "Graduate of Business, Accounting, Supply Chain, or related field",
             "1–2 years experience in inventory control or warehouse administration",
@@ -104,7 +134,7 @@ const jobRoles = [
     },
     {
         title: "Team Lead",
-        location: "Danao",
+        location: "Danao, Cebu",
         qualifications: [
             "Graduate of Supply Chain/Industrial Engineering/Business or equivalent",
             "2–3 years warehouse/production experience with lead responsibilities",
@@ -118,7 +148,7 @@ const jobRoles = [
     // META
     {
         title: "Bakery Harvester",
-        location: "Meta",
+        location: "Canlubang, Laguna",
         qualifications: [
             "High school graduate; 1 year bakery/food manufacturing experience preferred",
             "Familiar with food safety (basic GMP, HACCP awareness) and proper product handling",
@@ -129,7 +159,7 @@ const jobRoles = [
     },
     {
         title: "Encoder / SAP",
-        location: "Meta",
+        location: "Canlubang, Laguna",
         qualifications: [
             "Graduate of any business, supply chain, or IT-related course (or 2 years college/vocational with strong experience)",
             "1–2 years experience in data encoding, warehouse/commissary operations, or logistics",
@@ -141,7 +171,7 @@ const jobRoles = [
     },
     {
         title: "Housekeeping",
-        location: "Meta",
+        location: "Canlubang, Laguna",
         qualifications: [
             "High school graduate; experience in industrial cleaning preferred",
             "Knowledge of 5S, sanitation standards, and safe chemical handling",
@@ -152,7 +182,7 @@ const jobRoles = [
     },
     {
         title: "Inbound/Outbound Checker",
-        location: "Meta",
+        location: "Canlubang, Laguna",
         qualifications: [
             "Senior High or vocational graduate; college level a plus",
             "1+ year experience in warehouse operations (receiving/dispatch)",
