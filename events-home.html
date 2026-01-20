@@ -329,6 +329,72 @@
             color: #c41e3a;
         }
 
+        .thumb-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            color: #fff;
+            border: none;
+            font-size: 56px;
+            padding: 0 12px;
+            cursor: pointer;
+            z-index: 20;
+            border-radius: 50%;
+            transition: color 0.3s, opacity 0.3s, background 0.3s, box-shadow 0.3s;
+            opacity: 1;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: heartbeat 1.2s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            10% { transform: translateY(-50%) scale(1.08); }
+            20% { transform: translateY(-50%) scale(0.98); }
+            30% { transform: translateY(-50%) scale(1.12); }
+            40% { transform: translateY(-50%) scale(0.96); }
+            50% { transform: translateY(-50%) scale(1.08); }
+            60% { transform: translateY(-50%) scale(1); }
+        }
+        .thumb-btn-left {
+            left: 20px;
+            padding-left: 20px;
+        }
+        .thumb-btn-right {
+            right: 20px;
+            padding-right: 20px;
+        }
+        .thumb-btn svg {
+            width: 66px;
+            height: 66px;
+            fill: #fff;
+            filter: drop-shadow(0 0 12px #ff002b88) drop-shadow(0 0 8px #fff8);
+            transition: fill 0.3s, filter 0.3s;
+        }
+        .thumb-btn:hover svg {
+            fill: #ff002b;
+            filter: drop-shadow(0 0 24px #ff002b) drop-shadow(0 0 12px #fff8);
+        }
+        @media (max-width: 768px) {
+            .thumb-btn {
+                font-size: 42px;
+                padding: 0 6px;
+            }
+            .thumb-btn svg {
+                width: 42px;
+                height: 42px;
+                padding-bottom: 10px;
+            }
+            .thumb-btn-left {
+                left: 0;
+            }
+            .thumb-btn-right {
+                right: 0;
+            }
+        }
+
         /* Tablet Responsive */
         @media (max-width: 1024px) {
             .logo {
@@ -634,11 +700,14 @@
         </div>
 
         <div class="thumbnails-section">
+            <button class="thumb-btn thumb-btn-left" id="thumbBtnLeft" style="display:none">
+                <svg viewBox="0 0 24 24"><path d="M15.5 19.5L9 12l6.5-7.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
             <div class="thumbnails-container" id="thumbnailsContainer">
                 <div class="thumbnail active" 
                      data-video="assets/img/events/main/PCL_Milestone.mp4"
                      data-title="20 years Milestone "
-                     data-description="Over the past 20 years, Producers Connection Logistics has achieved key milestones that strengthened its operations and industry presence. Through continuous improvements in services, infrastructure, and partnerships, the company has built a strong foundation for sustainable growth. These accomplishments reflect consistent progress, reliability, and long-term commitment to excellence."
+                     data-description="Over the past 20 years, Producers Connection Logistics has achieved important milestones that strengthened its operations and industry presence. Through continuous improvements in services, infrastructure, and partnerships, the company has built a strong foundation for sustainable growth and excellence."
                      data-year="2004"
                      data-genre="-"
                      data-type="2024"
@@ -657,6 +726,66 @@
                      data-rating="watch">
                     <img src="assets/img/events/main/20th_Anniv.jpg" alt="Episode 1">
                     <div class="thumbnail-label">20th Anniversary</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/PCLGiving2025.mp4"
+                     data-title="PCL Giving 2025"
+                     data-description="Every year on his birthday, our President encourages us to shift our focus toward helping those in need, inspiring a culture of generosity by giving to others rather than presenting gifts to him."
+                     data-year="February"
+                     data-genre="09,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/PCLGiving2025.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">PCL Giving 2025</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/PCLGiving2024.mp4"
+                     data-title="Lip Sync Battle Entry (PCLGiving2024)"
+                     data-description="Every year on his birthday, our President encourages us to shift our focus toward helping those in need, inspiring a culture of generosity by giving to others rather than presenting gifts to him."
+                     data-year="February"
+                     data-genre="09,"
+                     data-type="2024"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/PCLGiving2024.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">PCL Giving 2024</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/EES.mp4"
+                     data-title="Energy Efficiency Summit"
+                     data-description="The Energy Efficiency Summit brings together industry leaders and professionals to share insights, best practices, and innovative solutions that promote responsible energy use, sustainability, and long-term operational efficiency."
+                     data-year="November"
+                     data-genre="22,"
+                     data-type="2024"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/EES.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Energy Efficiency Summit</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/PCLCS.mp4"
+                     data-title="PCL Convert Stories - Pasalamat 2024"
+                     data-description="This video features the performance presented by Marilao during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="December"
+                     data-genre="08,"
+                     data-type="2024"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/PCLCS.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Pasalamat 2024</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/WDEEE.mp4"
+                     data-title="We Do Everything Excellent Everyday"
+                     data-description="Reflects our commitment to delivering high-quality work with consistency, professionalism, and dedication in everything we do, every single day."
+                     data-year="June"
+                     data-genre="15,"
+                     data-type="2023"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/WDEEE.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">We Do Everything Excellent Everyday</div>
                 </div>
                  
                 <div class="thumbnail" 
@@ -682,7 +811,82 @@
                     <img src="assets/img/events/main/LSBE_Marilao.jpg" alt="Episode 2">
                     <div class="thumbnail-label">Lip Sync Battle Entry (Marilao)</div>
                 </div>
+
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Cavite.mp4"
+                     data-title="Lip Sync Battle Entry (Cavite)"
+                     data-description="This video features the performance presented by Cavite during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Cavite.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Cavite)</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Batangas.mp4"
+                     data-title="Lip Sync Battle Entry (Batangas)"
+                     data-description="This video features the performance presented by Batangas during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Batangas.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Batangas)</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Cabuyao.mp4"
+                     data-title="Lip Sync Battle Entry (Cabuyao)"
+                     data-description="This video features the performance presented by Cabuyao during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Cabuyao.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Cabuyao)</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Paco.mp4"
+                     data-title="Lip Sync Battle Entry (Paco)"
+                     data-description="This video features the performance presented by Paco during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Paco.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Paco)</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Canlubang.mp4"
+                     data-title="Lip Sync Battle Entry (Canlubang)"
+                     data-description="This video features the performance presented by Canlubang during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Canlubang.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Canlubang)</div>
+                </div>
+                
+                <div class="thumbnail" 
+                     data-video="assets/img/events/main/LSBE_Antipolo.mp4"
+                     data-title="Lip Sync Battle Entry (Antipolo)"
+                     data-description="This video features the performance presented by Antipolo during the Lip Sync Battle. It was showcased as part of the event, highlighting creativity, energy, and team spirit on stage. This presentation was part of the program’s entertainment segment and audience engagement. Enjoy the performance as it was presented during the Lip Sync Battle."
+                     data-year="February"
+                     data-genre="07,"
+                     data-type="2025"
+                     data-rating="watch">
+                    <img src="assets/img/events/main/LSBE_Antipolo.jpg" alt="Episode 2">
+                    <div class="thumbnail-label">Lip Sync Battle Entry (Antipolo)</div>
+                </div>
             </div>
+            <button class="thumb-btn thumb-btn-right" id="thumbBtnRight">
+                <svg viewBox="0 0 24 24"><path d="M8.5 4.5L15 12l-6.5 7.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
         </div>
     </div>
 
@@ -714,6 +918,10 @@
         const taglineText = document.getElementById('taglineText');
         const badgeText = document.getElementById('badgeText');
         
+        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+        const thumbBtnLeft = document.getElementById('thumbBtnLeft');
+        const thumbBtnRight = document.getElementById('thumbBtnRight');
+
         let isMuted = true;
 
         soundToggle.addEventListener('click', (e) => {
@@ -750,6 +958,33 @@
             type.textContent = thumbnail.getAttribute('data-type');
             rating.textContent = thumbnail.getAttribute('data-rating');
         }
+
+        function updateThumbBtnVisibility() {
+            // Check if can scroll left
+            if (thumbnailsContainer.scrollLeft <= 0) {
+                thumbBtnLeft.style.display = 'none';
+            } else {
+                thumbBtnLeft.style.display = '';
+            }
+            // Check if can scroll right
+            if (thumbnailsContainer.scrollLeft + thumbnailsContainer.offsetWidth >= thumbnailsContainer.scrollWidth - 1) {
+                thumbBtnRight.style.display = 'none';
+            } else {
+                thumbBtnRight.style.display = '';
+            }
+        }
+
+        thumbBtnLeft.addEventListener('click', function(e) {
+            e.stopPropagation();
+            thumbnailsContainer.scrollBy({ left: -220, behavior: 'smooth' });
+        });
+        thumbBtnRight.addEventListener('click', function(e) {
+            e.stopPropagation();
+            thumbnailsContainer.scrollBy({ left: 220, behavior: 'smooth' });
+        });
+
+        thumbnailsContainer.addEventListener('scroll', updateThumbBtnVisibility);
+        window.addEventListener('resize', updateThumbBtnVisibility);
 
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('click', () => {
@@ -808,6 +1043,8 @@
                 mainVideo.src = firstThumb.getAttribute('data-video') || mainVideo.src;
                 mainVideo.muted = isMuted;
             }
+
+            updateThumbBtnVisibility();
         });
     </script>
 </body>

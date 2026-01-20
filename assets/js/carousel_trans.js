@@ -11,8 +11,8 @@
   const closeModal = document.getElementById('closeModal');
   const galleryWrapper = document.querySelector('.gallery-wrapper');
   if (!cards.length || !galleryWrapper) return;
-  const positions = ['left-3', 'left-2', 'left-1', 'center', 'right-1', 'right-2'];
-  let currentPositions = Array.from({length: 6}, (_, i) => i);
+  const positions = ['left-3', 'left-2', 'left-1', 'center', 'right-1', 'right-2', 'right-3'];
+  let currentPositions = Array.from({length: 7}, (_, i) => i);
   let touchStartX = 0, touchEndX = 0, isDragging = false;
   function handleSwipe() {
     const swipeThreshold = 50;
@@ -61,11 +61,11 @@
     });
   }
   function rotateLeft() {
-    currentPositions = currentPositions.map(pos => (pos + 1) % 6);
+    currentPositions = currentPositions.map(pos => (pos + 1) % 7);
     updateCards();
   }
   function rotateRight() {
-    currentPositions = currentPositions.map(pos => (pos - 1 + 6) % 6);
+    currentPositions = currentPositions.map(pos => (pos - 1 + 7) % 7);
     updateCards();
   }
   prevBtn.addEventListener('click', rotateRight);

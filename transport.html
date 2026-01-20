@@ -35,6 +35,10 @@
                         <p style="font-size: 1.3rem;">With these strengths, PCL continues to enhance its capabilities, ensuring that every unit is maintained to the highest standards of safety and reliability. The establishment of this garage not only reflects PCL’s growth but also reinforces its commitment to delivering efficient and dependable logistics solutions.</p>
                         <div class="stats">
                             <div class="stat-item">
+                                <h3>95,189</h3>
+                                <p>Trip Served</p>
+                            </div>
+                            <div class="stat-item">
                                 <h3>21</h3>
                                 <p>Clients Served</p>
                             </div>
@@ -45,10 +49,6 @@
                             <div class="stat-item">
                                 <h3>4</h3>
                                 <p>Garage Facility</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>1</h3>
-                                <p>Electric Vehicle</p>
                             </div>
                         </div>
                     </div>
@@ -61,36 +61,41 @@
             <h2>Our Trucks</h2>            
             <div class="gallery-container">
                 <div class="gallery-wrapper">
-                    <div class="card" data-year="10 Wheeler" data-label="Truck Type">
-                        <div class="card-year">10 Wheeler</div>
-                        <img src="assets/img/transport/t1.png" alt="Truck Type">
-                        <div class="card-label">Large Fleet</div>
-                    </div>
                     <div class="card" data-year="4 Wheeler" data-label="Truck Type">
                         <div class="card-year">4 Wheeler</div>
                         <img src="assets/img/transport/t2.png" alt="Truck Type">
-                        <div class="card-label">Small Fleet</div>
-                    </div>
-                    <div class="card" data-year="6 Wheeler" data-label="Truck Type">
-                        <div class="card-year">6 Wheeler</div>
-                        <img src="assets/img/transport/t3.png" alt="Truck Type">
-                        <div class="card-label">Large Fleet</div>
-                    </div>
-                    <div class="card" data-year="" data-label="PCL Giving">
-                        <img src="assets/img/transport/main.png" alt="PCL Giving">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
-                            <div style="color: white; font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);"></div>
-                        </div>
-                    </div>
-                    <div class="card" data-year="Uruvan" data-label="Truck Type">
-                        <div class="card-year">LCV (CARGO VAN)</div>
-                        <img src="assets/img/transport/uv.png" alt="Truck Type">
                         <div class="card-label">Small Fleet</div>
                     </div>
                     <div class="card" data-year="L300" data-label="Truck Type">
                         <div class="card-year">LCV (L300)</div>
                         <img src="assets/img/transport/l3.png" alt="Truck Type">
                         <div class="card-label">Small Fleet</div>
+                    </div>
+                    <div class="card" data-year="Uruvan" data-label="Truck Type">
+                        <div class="card-year">LCV (CARGO VAN)</div>
+                        <img src="assets/img/transport/uv.png" alt="Truck Type">
+                        <div class="card-label">Small Fleet</div>
+                    </div>
+                    <div class="card" data-year="" data-label="Main">
+                        <img src="assets/img/transport/main.png" alt="Main">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
+                            <div style="color: white; font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);"></div>
+                        </div>
+                    </div>
+                    <div class="card" data-year="10 Wheeler" data-label="Truck Type">
+                        <div class="card-year">10 Wheeler</div>
+                        <img src="assets/img/transport/t1.png" alt="Truck Type">
+                        <div class="card-label">Large Fleet</div>
+                    </div>
+                    <div class="card" data-year="6 Wheeler" data-label="Truck Type">
+                        <div class="card-year">6 Wheeler</div>
+                        <img src="assets/img/transport/t3.png" alt="Truck Type">
+                        <div class="card-label">Large Fleet</div>
+                    </div>
+                    <div class="card" data-year="6 Wheeler (Refer)" data-label="Truck Type">
+                        <div class="card-year">6 Wheeler (Refer)</div>
+                        <img src="assets/img/transport/refer.png" alt="Truck Type">
+                        <div class="card-label">Large Fleet</div>
                     </div>
                 </div>
                 <button class="nav-btn prev" aria-label="Previous">❮</button>
@@ -113,7 +118,6 @@
         <div class="carousel-container">
             <img src="assets/img/transport/EV.png" alt="Careers" class="carousel-img active" style="width:100%;height:auto;display:block;">
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
     <section id="location" class="map-section">
@@ -132,7 +136,7 @@
             <img src="assets/img/logo.png" alt="Logo">
         </div>
         <div class="assistive-item" data-target="home.html"><span class="assistive-label">Home</span></div>
-        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Service</span></div>
+        <div class="assistive-item" data-target="services.html"><span class="assistive-label">Logistics</span></div>
         <div class="assistive-item" data-target="pclAcademy.html"><span class="assistive-label">Academy</span></div>
         <div class="assistive-item" data-target="careers.html"><span class="assistive-label">Careers</span></div>
         <div class="assistive-item" data-target="events.html"><span class="assistive-label">Events</span></div>
@@ -214,6 +218,60 @@
         .modal-content { padding: 18px 4vw 12px 4vw !important; }
         #chatAssistBtn { width: 48px !important; height: 48px !important; }
         #chatAssistBtn img { width: 48px !important; height: 48px !important; }
+    }
+    /* Responsive full-fit image for EV section */
+    #home.events-carousel-section {
+        width: 100vw;
+        min-height: 38vw;
+        max-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+    }
+    #home.events-carousel-section .carousel-container {
+        width: 100vw;
+        height: 38vw;
+        max-height: 80vh;
+        min-height: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    #home.events-carousel-section .carousel-img {
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
+        background: #000;
+    }
+    @media (max-width: 900px) {
+        #home.events-carousel-section, #home.events-carousel-section .carousel-container {
+            min-height: 170px;
+            height: 40vw;
+        }
+        #home.events-carousel-section .carousel-img {
+            min-height: 180px;
+            height: 40vw;
+        }
+    }
+    @media (max-width: 600px) {
+        #home.events-carousel-section, #home.events-carousel-section .carousel-container {
+            min-height: 120px;
+            height: 35vw;
+        }
+        #home.events-carousel-section .carousel-img {
+            min-height: 120px;
+            height: 60vw;
+        }
     }
 </style>
 <script>
