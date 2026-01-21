@@ -219,87 +219,139 @@
     </script>
 
 <!-- Chat Assistance Button and Modal -->
-<button id="chatAssistBtn" title="Chat Assistance" style="position:fixed;bottom:24px;right:24px;z-index:9999;background:none;border:none;border-radius:50%;width:60px;height:60px;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;padding:0;">
-    <img id="chatAssistIcon" src="assets/img/email.png" alt="Chat" style="width:75px;height:75px;position:relative;z-index:2;">
+<button id="chatAssistBtn" title="Chat Assistance">
+    <img id="chatAssistIcon" src="assets/img/email.png" alt="Chat">
 </button>
-<div id="chatModal" style="display:none;position:fixed;z-index:10000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);align-items:center;justify-content:center;">
-    <div class="modal-content" style="background:#353535;border-radius:18px;padding:32px 18px 18px 18px;width:95vw;max-width:420px;box-shadow:0 8px 32px rgba(0,0,0,0.25);position:relative;">
-        <button class="close-modal" id="closeModalBtn" title="Close" style="position:absolute;top:12px;right:18px;font-size:1.6rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
-        <div class="modal-header" style="display:flex;align-items:center;margin-bottom:18px;">
+
+<div id="chatModal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn" title="Close">&times;</button>
+        <div class="modal-header">
             <img src="assets/img/logo.png" alt="Logo" style="width:38px;height:38px;margin-right:10px;">
             <span style="color:#fff;font-size:1.2rem;font-weight:600;">Chat Assistance</span>
         </div>
+        
         <div class="form-container">
-            <form action="https://formsubmit.co/nesio@pcl.com.ph" method="post" id="chatAssistForm" style="display:flex;flex-direction:column;gap:14px;">
-                <input type="text" name="Name" placeholder="Full Name" required style="background:#f7f7f7;border:none;border-radius:18px;padding:12px 18px;font-size:1rem;color:#333;outline:none;">
-                <input type="email" name="Email" placeholder="E-Mail" required style="background:#f7f7f7;border:none;border-radius:18px;padding:12px 18px;font-size:1rem;color:#333;outline:none;">
-                <input type="number" name="Number" placeholder="Contact No." required style="background:#f7f7f7;border:none;border-radius:18px;padding:12px 18px;font-size:1rem;color:#333;outline:none;">
-                <textarea name="Message" cols="30" rows="10" placeholder="Message" required style="background:#f7f7f7;border:none;border-radius:18px;padding:12px 18px;font-size:1rem;color:#333;outline:none;min-height:120px;"></textarea>
-                <input type="submit" value="Submit" style="background:#b71c1c;color:#fff;border:none;border-radius:18px;padding:10px 0;font-size:1.1rem;font-weight:600;cursor:pointer;margin-top:8px;transition:background 0.2s;">
-                <input type="hidden" name="_cc" value="nesio@pcl.com.ph,icdulce@pcl.com.ph,inquiry@pcl.com.ph">
+            <form action="https://formsubmit.co/ajax/nesio@pcl.com.ph" method="POST" id="chatAssistForm">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="E-Mail" required>
+                <input type="text" name="Number" placeholder="Contact No." required>
+                <textarea name="Message" placeholder="Message" required></textarea>
+                
+                <input type="hidden" name="_cc" value="icdulce@pcl.com.ph,inquiry@pcl.com.ph,pclacademy@pcl.com.ph">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false"> 
+
+                <input type="submit" id="submitBtn1" value="Submit">
             </form>
-            <div id="chatThankYou" style="display:none;color:#fff;text-align:center;font-size:1.1rem;padding:18px 0 0 0;">Thank you for contacting us!<br>We have received your message.</div>
+            
+            <div id="chatThankYou" style="display:none;color:#fff;text-align:center;font-size:1.1rem;padding:18px 0 0 0;">
+                Thank you for contacting us!<br>We have received your message.
+            </div>
         </div>
     </div>
 </div>
+
 <style>
-    #chatAssistBtn { background: none !important; box-shadow: none !important; position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border: none; border-radius: 50%; cursor: pointer; padding: 0; z-index: 9999; }
-    #chatAssistBtn img { position: relative; z-index: 2; width: 55px; height: 55px; transition: transform 0.18s; filter: drop-shadow(0 1px 2px #6b6b6b) drop-shadow(0 1px 2px rgba(58, 58, 58, 0.85)); }
-    #chatAssistBtn img.pulse { animation: iconPulse 0.7s cubic-bezier(0.4,0,0.2,1); }
-    @keyframes iconPulse { 0% { transform: scale(1); } 20% { transform: scale(1.18); } 40% { transform: scale(0.92); } 60% { transform: scale(1.12); } 80% { transform: scale(0.98); } 100% { transform: scale(1); } }
-    #chatAssistBtn:hover img { transform: scale(1.08); animation: iconPulse 0.7s cubic-bezier(0.4,0,0.2,1); }
-    .form-container input[type="submit"]:hover { background: #a31515; }
-    @media (max-width: 600px) {
-        .modal-content { padding: 18px 4vw 12px 4vw !important; }
-        #chatAssistBtn { width: 48px !important; height: 48px !important; }
-        #chatAssistBtn img { width: 48px !important; height: 48px !important; }
-    }
+#chatAssistBtn {  position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; background: none; border: none; border-radius: 50%; cursor: pointer; padding: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+#chatAssistBtn img {  width: 60px; height: 60px; transition: transform 0.18s; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3)); }
+#chatAssistBtn:hover img { transform: scale(1.1); }
+#chatModal {  display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.modal-content {  background: #353535; border-radius: 18px; padding: 32px 18px 18px; width: 90%; max-width: 400px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+.close-modal {  position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #fff; background: none; border: none; cursor: pointer; }
+.modal-header {  display: flex; align-items: center; margin-bottom: 18px; }
+#chatAssistForm { display: flex; flex-direction: column; gap: 12px; }
+#chatAssistForm input:not([type="submit"]),
+#chatAssistForm textarea {  background: #f7f7f7; border: none; border-radius: 12px; padding: 12px; font-size: 14px; outline: none; width: 100%; box-sizing: border-box; }
+#chatAssistForm textarea { min-height: 100px; resize: vertical; }
+#submitBtn1 { background: #d32f2f; color: #fff; font-weight: 600; border: none; border-radius: 12px; padding: 12px; cursor: pointer; transition: background 0.3s ease; margin-top: 5px; }
+#submitBtn1:hover { background: #7c2222; }
+.pulse { animation: iconPulse 0.7s ease-in-out; }
+@keyframes iconPulse { 
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@media (max-width: 600px) {
+    #chatAssistBtn { bottom: 15px; right: 15px; }
+    .modal-content { width: 95%; }
+}
 </style>
+
 <script>
-    const chatBtn = document.getElementById('chatAssistBtn');
-    const chatModal = document.getElementById('chatModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const chatIcon = document.getElementById('chatAssistIcon');
-    const chatAssistForm = document.getElementById('chatAssistForm');
-    const chatThankYou = document.getElementById('chatThankYou');
-    chatBtn.onclick = () => chatModal.style.display = 'flex';
-    closeModalBtn.onclick = () => chatModal.style.display = 'none';
-    window.onclick = function(event) {
-        if (event.target === chatModal) {
-            chatModal.style.display = 'none';
-        }
-    }
-    setInterval(() => {
-        if (!chatBtn.matches(':hover')) {
-            chatIcon.classList.add('pulse');
-            setTimeout(() => chatIcon.classList.remove('pulse'), 700);
-        }
-    }, 3000);
-    // Prevent redirect on chat assistance form submit
-    if (chatAssistForm) {
-        chatAssistForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(chatAssistForm);
-            fetch(chatAssistForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(() => {
-                chatAssistForm.style.display = 'none';
-                chatThankYou.style.display = 'block';
-                setTimeout(() => {
-                    chatModal.style.display = 'none';
-                    chatAssistForm.reset();
-                    chatAssistForm.style.display = 'flex';
-                    chatThankYou.style.display = 'none';
-                }, 2200);
-            }).catch(() => {
-                chatThankYou.innerHTML = 'Sorry, there was an error. Please try again.';
-                chatThankYou.style.display = 'block';
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatBtn = document.getElementById('chatAssistBtn');
+        const chatModal = document.getElementById('chatModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const chatIcon = document.getElementById('chatAssistIcon');
+        const chatAssistForm = document.getElementById('chatAssistForm');
+        const chatThankYou = document.getElementById('chatThankYou');
+
+        if (chatBtn && chatModal && closeModalBtn) {
+            chatBtn.addEventListener('click', () => chatModal.style.display = 'flex');
+            closeModalBtn.addEventListener('click', () => chatModal.style.display = 'none');
+            window.addEventListener('click', (e) => {
+                if (e.target === chatModal) chatModal.style.display = 'none';
             });
-        });
-    }
+        }
+
+        if (chatBtn && chatIcon) {
+            setInterval(() => {
+                if (!chatBtn.matches(':hover')) {
+                    chatIcon.classList.add('pulse');
+                    setTimeout(() => chatIcon.classList.remove('pulse'), 700);
+                }
+            }, 4000);
+        }
+
+        if (chatAssistForm) {
+            chatAssistForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn1 = document.getElementById('submitBtn1');
+                const originalBtnValue = submitBtn1.value;
+                submitBtn1.value = "Sending...";
+                submitBtn1.disabled = true;
+
+                const formData = new FormData(chatAssistForm);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch(chatAssistForm.action, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json' 
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    console.log("FormSubmit Status:", response.status); 
+                    if (response.ok) {
+                        chatAssistForm.style.display = 'none';
+                        chatThankYou.style.display = 'block';
+                        setTimeout(() => {
+                            chatModal.style.display = 'none';
+                            chatAssistForm.reset();
+                            chatAssistForm.style.display = 'flex';
+                            chatThankYou.style.display = 'none';
+                            submitBtn1.value = originalBtnValue;
+                            submitBtn1.disabled = false;
+                        }, 3000);
+                    } else {
+                        return response.json().then(data => {
+                            console.error("FormSubmit Error:", data);
+                            throw new Error('Server Error');
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("Fetch Error:", error);
+                    alert("Something went wrong. Please check your internet connection or try again later.");
+                    submitBtn1.value = originalBtnValue;
+                    submitBtn1.disabled = false;
+                });
+            });
+        }
+    });
 </script>
 </body>
 </html>
