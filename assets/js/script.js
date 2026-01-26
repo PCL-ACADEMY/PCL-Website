@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
   const loader = document.querySelector('.page-loader');
-  const mainContent = document.querySelector('body');
+  const body = document.body;
+
   if (loader) {
-    mainContent.style.overflow = 'hidden';
-    window.addEventListener('load', function() {
+    body.style.overflow = 'hidden';
+
+    window.addEventListener('load', () => {
       loader.classList.add('hide');
+
       setTimeout(() => {
         loader.style.display = 'none';
-        mainContent.style.overflow = '';
+        body.style.overflow = '';
       }, 400);
     });
   }
+
 
   const menuBtn = document.getElementById('menuBtn');
   const assistiveMenu = document.getElementById('assistiveMenu');
